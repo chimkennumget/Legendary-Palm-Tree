@@ -2,7 +2,7 @@
 ## Cornell College CSC 357
 
 
-#Ball game
+Ball game
 
 - Each level gets progressively harder, adding new elements to the game.
 
