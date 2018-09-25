@@ -2,12 +2,14 @@
 ## Cornell College CSC 357
 
 
-Ball game. Each level gets progressively harder, adding new elements to the game.
+#Ball game
 
-Puzzle like elements, 3d terrain, lazers, obstacles, etc. 
+- Each level gets progressively harder, adding new elements to the game.
 
-3 Strikes, can only lose 3 times before having to start over. 
+- Puzzle like elements, 3d terrain, lazers, obstacles, etc. 
 
-Checkpoints to save progress, keeps track of how far you've gotten, multiplayer maybe. 
+- 3 Strikes, can only lose 3 times before having to start over. 
+
+- Checkpoints to save progress, keeps track of how far you've gotten, multiplayer maybe. 
 
  
