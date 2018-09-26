@@ -13,3 +13,9 @@ Ball game
 - Checkpoints to save progress, keeps track of how far you've gotten, multiplayer maybe. 
 
  
+## Authors:
+Amber Frazier
+Brody Lamb
+Corey Duncan
+Cullen Yuska
+Daniel Heinsch
