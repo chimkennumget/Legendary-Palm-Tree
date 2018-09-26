@@ -231,7 +231,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PlayerObject.cs" />
+    <Compile Include="Assets\PlayerConnectionObject.cs" />
+    <Compile Include="Assets\PlayerUnit.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
