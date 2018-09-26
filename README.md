@@ -14,8 +14,8 @@ Ball game
 
  
 ## Authors:
-Amber Frazier /n/
-Brody Lamb /n/
-Corey Duncan /n/
-Cullen Yuska /n/
-Daniel Heinsch /n/
+Amber Frazier, 
+Brody Lamb, 
+Corey Duncan, 
+Cullen Yuska, 
+Daniel Heinsch
