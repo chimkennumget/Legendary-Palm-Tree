@@ -20,4 +20,8 @@ Corey Duncan,
 Cullen Yuska, 
 Daniel Heinsch
 
+<<<<<<< test
 test test test
+=======
+test in the branch
+>>>>>>> local
