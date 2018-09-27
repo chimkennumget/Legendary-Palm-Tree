@@ -57,6 +57,7 @@ MonoBehaviour:
   playerCamera: {fileID: 20947987404378566, guid: 802a4d8820f3b5645b651cca637166bc,
     type: 2}
   PlayerName: Anonymous
+  go: {fileID: 0}
 --- !u!114 &114895244200299432
 MonoBehaviour:
   m_ObjectHideFlags: 1
