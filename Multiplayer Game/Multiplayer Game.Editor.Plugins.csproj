@@ -282,13 +282,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Multiplayer Game.csproj">
-      <Project>{B0E6DA61-75BD-951B-8ACC-5636EEADC456}</Project>
-      <Name>Multiplayer Game</Name>
-    </ProjectReference>
     <ProjectReference Include="Multiplayer Game.Plugins.csproj">
       <Project>{E9FDB8D2-9303-4CD0-14FF-1A5AD91B9093}</Project>
       <Name>Multiplayer Game.Plugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="Multiplayer Game.csproj">
+      <Project>{B0E6DA61-75BD-951B-8ACC-5636EEADC456}</Project>
+      <Name>Multiplayer Game</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
