@@ -938,7 +938,7 @@ MonoBehaviour:
   m_VelocityThreshold: 0.0001
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
-  m_InterpolateMovement: 20.6
+  m_InterpolateMovement: 0.01
 --- !u!114 &114500510593693800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -957,7 +957,7 @@ MonoBehaviour:
   sendEveryXTick: 1
   desiredBufferMS: 0.01
   bufferDriftCorrectAmt: 0.1
-  autoKinematic: 1
+  autoKinematic: 0
   allowOfftick: 1
   sendOnEvent: 30
   includedAxes: 7
