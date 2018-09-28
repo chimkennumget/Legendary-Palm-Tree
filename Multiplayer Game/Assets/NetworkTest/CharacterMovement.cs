@@ -8,26 +8,46 @@ public class CharacterMovement : MonoBehaviour
 {
     
     Animator anim;
-    public float speed = 6.0f;
-    public float jumpSpeed = 8.0f;
-    public float gravity = 20.0f;
-
-    private Vector3 moveDirection = Vector3.zero;
-
+    GameObject boxxy;
+    bool boxiscolliding;
     void Start()
     {
         anim = this.GetComponent<Animator>();
+        boxxy = GameObject.Find("Cube");
     }
-
+    void charjump()
+    {
+        
+            gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, 350, 0));
+        boxiscolliding = false;
+            anim.SetBool("jumping", true);
+        
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject)
+        {
+            boxiscolliding = true;
+        }
+    }
     void Update()
     {
         
             var x = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
-            var z = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 3.0f;
+            var z = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 5.0f;
 
             transform.Rotate(0, x, 0);
             transform.Translate(0, 0, z);
-        if (z > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && boxiscolliding)
+        {
+            charjump();
+           
+        }
+        else if (boxiscolliding==true)
+        {
+            anim.SetBool("jumping", false);
+        }
+            if (z > 0)
         {
             
             anim.SetBool("running", true);

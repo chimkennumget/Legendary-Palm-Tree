@@ -20,11 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4825113218638482}
   - component: {fileID: 95303040575994632}
-  - component: {fileID: 54836601930138190}
   - component: {fileID: 114705161497231638}
   - component: {fileID: 114309496067426030}
   - component: {fileID: 114971177845332458}
   - component: {fileID: 114708810251470066}
+  - component: {fileID: 114566805159427132}
+  - component: {fileID: 54086397951866272}
   m_Layer: 0
   m_Name: KadukiBlackHairPrefab
   m_TagString: Untagged
@@ -434,7 +435,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1786893861906536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4825113218638482}
@@ -824,16 +825,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1786893861906536}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54836601930138190
+--- !u!54 &54086397951866272
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1048965057482470}
   serializedVersion: 2
-  m_Mass: 0.5
+  m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -932,9 +933,28 @@ MonoBehaviour:
   m_SyncSpin: 1
   m_MovementTheshold: 0.001
   m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 10
+  m_SnapThreshold: 5
   m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
+  m_InterpolateMovement: 20.6
+--- !u!114 &114566805159427132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1048965057482470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 95303040575994632}
+  m_ParameterSendBits: 0
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!114 &114705161497231638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -946,9 +966,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3eb8943ab2342b438e3e12f17b96697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  jumpSpeed: 8
-  gravity: 20
 --- !u!114 &114708810251470066
 MonoBehaviour:
   m_ObjectHideFlags: 1

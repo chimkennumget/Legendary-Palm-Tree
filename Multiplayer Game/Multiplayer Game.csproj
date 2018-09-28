@@ -242,6 +242,7 @@
     <Compile Include="Assets\FirstNetworkTest\PlayerUnit.cs" />
     <Compile Include="Assets\NetworkTest\CharacterMovement.cs" />
     <Compile Include="Assets\NetworkTest\facecamera.cs" />
+    <Compile Include="Assets\NetworkTest\rainbowtext.cs" />
     <Compile Include="Assets\NetworkTest\setuplocalplayer.cs" />
   </ItemGroup>
   <ItemGroup>
