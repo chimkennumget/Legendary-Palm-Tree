@@ -10,8 +10,10 @@ public class CharacterMovement : MonoBehaviour
     Animator anim;
     GameObject boxxy;
     bool boxiscolliding;
+    Vector3 startingpoint;
     void Start()
     {
+        startingpoint = gameObject.transform.position;
         anim = this.GetComponent<Animator>();
         boxxy = GameObject.Find("Cube");
     }
@@ -32,8 +34,12 @@ public class CharacterMovement : MonoBehaviour
     }
     void Update()
     {
-        
-            var x = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
+        if (gameObject.transform.position.y <= -20)
+        {
+            Debug.Log("we are below");
+            gameObject.transform.position = startingpoint;
+        }
+        var x = CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
             var z = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * 5.0f;
 
             transform.Rotate(0, x, 0);
