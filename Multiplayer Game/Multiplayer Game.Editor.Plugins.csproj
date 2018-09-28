@@ -280,24 +280,50 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>Library\UnityAssemblies\UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
+    <Reference Include="ArraySerializer">
+      <HintPath>Assets\emotitron\Compression\plugins\ArraySerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="Bitstream">
+      <HintPath>Assets\emotitron\Compression\plugins\Bitstream.dll</HintPath>
+    </Reference>
+    <Reference Include="PrimitiveSerializer">
+      <HintPath>Assets\emotitron\Compression\plugins\PrimitiveSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="FloatCrusher">
+      <HintPath>Assets\emotitron\Compression\TransformCrusher\plugins\FloatCrusher.dll</HintPath>
+    </Reference>
+    <Reference Include="QuatCompress">
+      <HintPath>Assets\emotitron\Compression\TransformCrusher\plugins\QuatCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="DebugX">
+      <HintPath>Assets\emotitron\Utilities\plugins\DebugX.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Multiplayer Game.Plugins.csproj">
-      <Project>{E9FDB8D2-9303-4CD0-14FF-1A5AD91B9093}</Project>
-      <Name>Multiplayer Game.Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="Multiplayer Game.csproj">
       <Project>{B0E6DA61-75BD-951B-8ACC-5636EEADC456}</Project>
       <Name>Multiplayer Game</Name>
+    </ProjectReference>
+    <ProjectReference Include="Multiplayer Game.Plugins.csproj">
+      <Project>{E9FDB8D2-9303-4CD0-14FF-1A5AD91B9093}</Project>
+      <Name>Multiplayer Game.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\NetworkTest\FreeVoxelGirl\ReadMe.txt" />
+    <None Include="Assets\FirstScene\FreeVoxelGirl\ReadMe.txt" />
+    <None Include="Assets\Lobby\Documentation.txt" />
+    <None Include="Assets\Lobby\Instruction.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
+    <None Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\PUN\MasterNetAdapterPUN.txt" />
+    <None Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\PUN\NSTNetAdapterPUN.txt" />
+    <None Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\PUN2\MasterNetAdapterPUN2.txt" />
+    <None Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\PUN2\NSTNetAdapterPUN2.txt" />
+    <None Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\UNET\MasterNetAdapterUNET.txt" />
+    <None Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\UNET\NSTNetAdapterUNET.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

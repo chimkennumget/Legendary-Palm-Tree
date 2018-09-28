@@ -229,6 +229,24 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>Library\UnityAssemblies\UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
+    <Reference Include="ArraySerializer">
+      <HintPath>Assets\emotitron\Compression\plugins\ArraySerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="Bitstream">
+      <HintPath>Assets\emotitron\Compression\plugins\Bitstream.dll</HintPath>
+    </Reference>
+    <Reference Include="PrimitiveSerializer">
+      <HintPath>Assets\emotitron\Compression\plugins\PrimitiveSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="FloatCrusher">
+      <HintPath>Assets\emotitron\Compression\TransformCrusher\plugins\FloatCrusher.dll</HintPath>
+    </Reference>
+    <Reference Include="QuatCompress">
+      <HintPath>Assets\emotitron\Compression\TransformCrusher\plugins\QuatCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="DebugX">
+      <HintPath>Assets\emotitron\Utilities\plugins\DebugX.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Multiplayer Game.Plugins.csproj">
@@ -237,18 +255,153 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FirstNetworkTest\followcamera.cs" />
-    <Compile Include="Assets\FirstNetworkTest\PlayerConnectionObject.cs" />
-    <Compile Include="Assets\FirstNetworkTest\PlayerUnit.cs" />
-    <Compile Include="Assets\NetworkTest\CharacterMovement.cs" />
-    <Compile Include="Assets\NetworkTest\facecamera.cs" />
-    <Compile Include="Assets\NetworkTest\rainbowtext.cs" />
-    <Compile Include="Assets\NetworkTest\setuplocalplayer.cs" />
+    <Compile Include="Assets\emotitron\Compression\TransformCrusher\BitstreamExtensions.cs" />
+    <Compile Include="Assets\emotitron\Compression\TransformCrusher\ElementCrusher.cs" />
+    <Compile Include="Assets\emotitron\Compression\TransformCrusher\FloatCrushDrawer.cs" />
+    <Compile Include="Assets\emotitron\Compression\TransformCrusher\QuatCrusher.cs" />
+    <Compile Include="Assets\emotitron\Compression\TransformCrusher\SolidTextures.cs" />
+    <Compile Include="Assets\emotitron\Compression\TransformCrusher\Structs\CompressedElement.cs" />
+    <Compile Include="Assets\emotitron\Compression\TransformCrusher\Structs\CompressedMatrix.cs" />
+    <Compile Include="Assets\emotitron\Compression\TransformCrusher\Structs\CompressedValue.cs" />
+    <Compile Include="Assets\emotitron\Compression\TransformCrusher\Structs\Element.cs" />
+    <Compile Include="Assets\emotitron\Compression\TransformCrusher\Structs\Matrix.cs" />
+    <Compile Include="Assets\emotitron\Compression\TransformCrusher\TransformCrusher.cs" />
+    <Compile Include="Assets\emotitron\Compression\TransformCrusher\TransformCrusherDrawer.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Sample Scenes\Scripts\Ball.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Sample Scenes\Scripts\Beam.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Sample Scenes\Scripts\ControllerNonRB.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Sample Scenes\Scripts\DebugText.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Sample Scenes\Scripts\FPSDisplay.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Sample Scenes\Scripts\Mover.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Sample Scenes\Scripts\Rotator.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Sample Scenes\Scripts\SpawnObject.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Sample Scenes\Scripts\Startup.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\Compression\StructToByteArray.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\Compression\UdpKit\UdpByteConverter.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\Compression\UdpKit\UdpKit.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\Controller\ControllerInputMap.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\Controller\MouseInputAxis.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\InputSystem\InputSelector.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\InputSystem\InputSelectorAxis.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\InputSystem\InputSelectorBase.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\InputSystem\InputSelectorKeyCode.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\InputSystem\InputSelectorKeys.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\InputSystem\InputSelectorTouchZone.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\InputSystem\InputSelectorUIZone.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\InputSystem\UIZone.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\InputSystem\UIZoneSelector.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\BaseClasses\NSTComponent.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\BaseClasses\NSTMasterBehaviour.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\BaseClasses\NSTRootSingleton.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Elements\CompressedElement.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Elements\IElements.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Elements\NSTElementComponent.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Elements\NSTElementsEngine.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Elements\RotationElement.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Elements\TransformElement.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Enums\IncludedAxisEnum.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Enums\NSTEnums.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Enums\SendCullMaskEnum.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Frame.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\FrameBuffer.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\HealthSystem\IMonitorVitals.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\HealthSystem\IVitals.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\HealthSystem\Vital.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\HitGroups\HitGroupSelector.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\HitGroups\NSTHitGroupAssign.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\HitGroups\NSTHitGroupsSettings.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Interfaces\INSTCallbacks.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Interfaces\INSTSource.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Interfaces\IOfftick.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\MasterRTT.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\MasterNetAdapter.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\MasterNetCommon.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\NetAdapterInterfaces.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\NetAdapterTools.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\NSTNetAdapter.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\PUNSampleLauncher.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\UNET\UnetExtensions.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\NetworkSyncTransform.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\NSTMapBounds.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\NSTMaster.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\NSTSettings.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\NSTTools.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\QuatCompress.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Rewind\IIncludeOnGhost.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Rewind\IRewind.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Sample\NSTSampleController.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Sample\NSTSampleHealth.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Sample\NSTSampleHealthUI.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Sample\NSTSamplePlayer.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Sample\NSTSamplePlayerSpawn.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Sample\NSTSampleProjectile.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Sample\NSTSampleWeapon.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Settings\DebuggingSettings.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Settings\HeaderSettings.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Settings\HitGroupSettings.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Settings\NetLibrarySettings.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Settings\SettingsScriptableObject.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Settings\WorldCompressionSettings.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Utility\BandwidthUsage.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Utility\IntegrityCheck.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\Weapon\INstProjectile.cs" />
+    <Compile Include="Assets\emotitron\NST Core 5\Scripts\NST\WorldVectorCompression.cs" />
+    <Compile Include="Assets\emotitron\Utilities\BitUtilities\BitTools.cs" />
+    <Compile Include="Assets\emotitron\Utilities\CollectBounds.cs" />
+    <Compile Include="Assets\emotitron\Utilities\CopyComponent.cs" />
+    <Compile Include="Assets\emotitron\Utilities\DebugWidget.cs" />
+    <Compile Include="Assets\emotitron\Utilities\DrawerUtils.cs" />
+    <Compile Include="Assets\emotitron\Utilities\FindAllObjectTypeInScene.cs" />
+    <Compile Include="Assets\emotitron\Utilities\GenericCast\GenericCast.cs" />
+    <Compile Include="Assets\emotitron\Utilities\GUITools\EditorUtils.cs" />
+    <Compile Include="Assets\emotitron\Utilities\GUITools\EnumMaskAttribute.cs" />
+    <Compile Include="Assets\emotitron\Utilities\GUITools\HelpAttribute.cs" />
+    <Compile Include="Assets\emotitron\Utilities\GUITools\InspectorUtils.cs" />
+    <Compile Include="Assets\emotitron\Utilities\GUITools\ScriptableObjectDrawer.cs" />
+    <Compile Include="Assets\emotitron\Utilities\LayerAndTagTools.cs" />
+    <Compile Include="Assets\emotitron\Utilities\Pooling\Pool.cs" />
+    <Compile Include="Assets\emotitron\Utilities\QuaternionUtils.cs" />
+    <Compile Include="Assets\emotitron\Utilities\Singleton.cs" />
+    <Compile Include="Assets\emotitron\Utilities\SlimMath\Half.cs" />
+    <Compile Include="Assets\emotitron\Utilities\SlimMath\HalfUtilities.cs" />
+    <Compile Include="Assets\emotitron\Utilities\SmartVars\GenericX.cs" />
+    <Compile Include="Assets\emotitron\Utilities\SmartVars\SmartVars.cs" />
+    <Compile Include="Assets\emotitron\Utilities\StringTools.cs" />
+    <Compile Include="Assets\emotitron\Utilities\UniqueNamesList.cs" />
+    <Compile Include="Assets\FirstScene\CharacterMovement.cs" />
+    <Compile Include="Assets\FirstScene\facecamera.cs" />
+    <Compile Include="Assets\FirstScene\rainbowtext.cs" />
+    <Compile Include="Assets\FirstScene\setuplocalplayer.cs" />
+    <Compile Include="Assets\Lobby\Scripts\DraggablePanel.cs" />
+    <Compile Include="Assets\Lobby\Scripts\EventSystemChecker.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyCountdownPanel.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyHook.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyInfoPanel.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyMainMenu.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyManager.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyPlayer.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyPlayerList.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyServerEntry.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyServerList.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyTopPanel.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\NetworkAsteroid.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\NetworkGameManager.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\NetworkLobbyHook.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\NetworkSpaceship.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\NetworkSpaceshipBullet.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\NetworkTest\FreeVoxelGirl\ReadMe.txt" />
+    <None Include="Assets\FirstScene\FreeVoxelGirl\ReadMe.txt" />
+    <None Include="Assets\Lobby\Documentation.txt" />
+    <None Include="Assets\Lobby\Instruction.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
+    <None Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\PUN\MasterNetAdapterPUN.txt" />
+    <None Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\PUN\NSTNetAdapterPUN.txt" />
+    <None Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\PUN2\MasterNetAdapterPUN2.txt" />
+    <None Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\PUN2\NSTNetAdapterPUN2.txt" />
+    <None Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\UNET\MasterNetAdapterUNET.txt" />
+    <None Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\UNET\NSTNetAdapterUNET.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
