@@ -368,10 +368,12 @@
     <Compile Include="Assets\emotitron\Utilities\SmartVars\SmartVars.cs" />
     <Compile Include="Assets\emotitron\Utilities\StringTools.cs" />
     <Compile Include="Assets\emotitron\Utilities\UniqueNamesList.cs" />
+    <Compile Include="Assets\FirstScene\attachplayer.cs" />
     <Compile Include="Assets\FirstScene\CharacterMovement.cs" />
     <Compile Include="Assets\FirstScene\facecamera.cs" />
     <Compile Include="Assets\FirstScene\rainbowtext.cs" />
     <Compile Include="Assets\FirstScene\setuplocalplayer.cs" />
+    <Compile Include="Assets\FirstScene\updatecubeposition.cs" />
     <Compile Include="Assets\Lobby\Scripts\DraggablePanel.cs" />
     <Compile Include="Assets\Lobby\Scripts\EventSystemChecker.cs" />
     <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyCountdownPanel.cs" />

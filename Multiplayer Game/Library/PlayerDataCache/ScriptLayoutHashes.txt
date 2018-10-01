@@ -207,3 +207,5 @@ a8796ecdc9d5c260bbe32f30c4b10708 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:emotitron.NST.NSTMaster
 239d2cc8d353bbfcbefc27fa8f0221cc Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyServerList
 e0a17fc5d0327a99c39aa282ce6b43fe Assembly-CSharp.dll:emotitron.NST.HeaderSettings
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.updatecubeposition
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.attachplayer
