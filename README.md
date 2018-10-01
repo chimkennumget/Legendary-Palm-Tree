@@ -2,16 +2,14 @@
 ## Cornell College CSC 357
 
 
-Ball game
+CubeScape
+- CubeScape is a multiplayer puzzle game
 
-- Each level gets progressively harder, adding new elements to the game.
+- The player(s) will start the game inside of a large cube with puzzles on all six sides of the cube.
 
-- Puzzle like elements, 3d terrain, lazers, obstacles, etc. 
+- There are 5 objective items on every side of the cube, and the player(s) must collect all 30 of them.
 
-- 3 Strikes, can only lose 3 times before having to start over. 
-
-- Checkpoints to save progress, keeps track of how far you've gotten, multiplayer maybe. 
-
+- On each side of the cube there is a gravity controller that will flip the player(s) gravity depending on which side the Gravity controller is selected.
  
 ### Authors:
 Amber Frazier, 
