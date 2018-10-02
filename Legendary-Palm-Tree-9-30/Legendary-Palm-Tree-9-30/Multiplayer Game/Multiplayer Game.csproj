@@ -382,14 +382,10 @@
     <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyServerEntry.cs" />
     <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyServerList.cs" />
     <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyTopPanel.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\NetworkAsteroid.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\NetworkGameManager.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\NetworkLobbyHook.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\NetworkSpaceship.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\NetworkSpaceshipBullet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\FirstScene\FreeVoxelGirl\ReadMe.txt" />
+    <None Include="Assets\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\Lobby\Documentation.txt" />
     <None Include="Assets\Lobby\Instruction.txt" />
     <None Include="Assets\emotitron\NST Core 5\Scripts\NST\NetAdapter\PUN\MasterNetAdapterPUN.txt" />
