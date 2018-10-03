@@ -19,35 +19,44 @@ public class FPSCameraController : MonoBehaviour {
 
     private void Start()
     {
-        initcamrot = this.transform.eulerAngles;
+        //initcamrot = this.transform.localEulerAngles;
     }
     private void Update()
     {
         initialrotation = player.transform.eulerAngles;
         if (Input.GetKeyDown(KeyCode.O))
         {
-            this.transform.eulerAngles = new Vector3(initialrotation.x+initcamrot.x, initialrotation.y,initialrotation.z);
-            horval = 0;
-            vertval = 0;
+            if (player.GetComponent<playergravitycontrol>().upsidedown == false)
+            {
+                this.transform.localEulerAngles = new Vector3(initialrotation.x + 20, initialrotation.y, initialrotation.z);
+                horval = 0;
+                vertval = 0;
+            }
+            if (player.GetComponent<playergravitycontrol>().upsidedown == true)
+            {
+                this.transform.eulerAngles = new Vector3(initialrotation.x-20, initialrotation.y, initialrotation.z);
+                horval = 0;
+                vertval = 0;
+            }
         }
         if (Input.GetKey(KeyCode.J)&& horval>leftlimit)
         {
-            transform.eulerAngles +=new Vector3(0, -horspeed, 0);
+            transform.localEulerAngles += new Vector3(0, -horspeed, 0);
             horval += -horspeed;
         }
         if (Input.GetKey(KeyCode.L) && horval < rightlimit)
         {
-            transform.eulerAngles += new Vector3(0, horspeed, 0);
+            transform.localEulerAngles += new Vector3(0, horspeed, 0);
             horval += horspeed;
         }
         if (Input.GetKey(KeyCode.I)&& vertval < vertuplimit)
         {
-            transform.eulerAngles += new Vector3(-vertspeed, 0, 0);
+            transform.localEulerAngles += new Vector3(-vertspeed, 0, 0);
             vertval += vertspeed;
         }
         if (Input.GetKey(KeyCode.K) && vertval >vertlowlimit)
         {
-            transform.eulerAngles += new Vector3(vertspeed, 0, 0);
+            transform.localEulerAngles += new Vector3(vertspeed, 0, 0);
             vertval += -vertspeed;
         }
     }

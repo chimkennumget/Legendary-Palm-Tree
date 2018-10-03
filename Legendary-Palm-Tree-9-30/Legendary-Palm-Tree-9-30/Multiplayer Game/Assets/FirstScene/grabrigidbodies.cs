@@ -17,7 +17,7 @@ public class grabrigidbodies : MonoBehaviour
     {
         if (other.GetComponent<Rigidbody>() == true)
         {
-            Debug.Log(other.transform.localScale.x);
+
             pickupbody = other.GetComponent<Rigidbody>();
             canattach = true;
             if (Input.GetKeyDown(KeyCode.E) && isattached)

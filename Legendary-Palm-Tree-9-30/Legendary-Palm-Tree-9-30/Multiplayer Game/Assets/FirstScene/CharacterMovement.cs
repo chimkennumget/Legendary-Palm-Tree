@@ -9,8 +9,8 @@ public class CharacterMovement : MonoBehaviour
     
     Animator anim;
     GameObject boxxy;
-    bool boxiscolliding;
-   
+    public bool boxiscolliding;
+    public GameObject player;
     Vector3 startingpoint;
   
     void Start()
@@ -29,20 +29,19 @@ public class CharacterMovement : MonoBehaviour
     public float xairspeed=0;
     public float yairspeed=0;
     public float zairspeed=0;
+    public float jumpforce =350;
     public void charjump()
     {
         if (z > 0 || z<0)
         {
-            gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(z, 350, 0));
+            gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(z, jumpforce, 0));
             airspeed = z;
             wasmoving = true;
-            
-            
 
         }
         else
         {
-            gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, 350, 0));
+            gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpforce, 0));
         }
             
         
@@ -61,72 +60,79 @@ public class CharacterMovement : MonoBehaviour
             wasattached = false;
         }
     }
-     public float x;
+   
+    public float x;
      public float z;
-    void Update()
+    void FixedUpdate()
     {
-       
-        if (gameObject.transform.position.y <= -20)
-        {
-           
-            gameObject.transform.position = startingpoint;
-        }
+        
+        
 
-        x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
-        z = Input.GetAxis("Vertical") * Time.deltaTime * 5.0f;
-        if ((Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift)) && boxiscolliding)
-        {
+            if (gameObject.transform.position.y <= -20)
+            {
 
-            transform.Translate(-5 * Time.deltaTime, 0, 0);
-        }
-        else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && boxiscolliding)
-        {
+                gameObject.transform.position = startingpoint;
+            }
 
-            transform.Translate(5 * Time.deltaTime, 0, 0);
-        }
-        else if (boxiscolliding)
-        {
+            x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
+            z = Input.GetAxis("Vertical") * Time.deltaTime * 5.0f;
+            if ((Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift)) && boxiscolliding)
+            {
+
+                transform.Translate(-5 * Time.deltaTime, 0, 0);
+            }
+            else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && boxiscolliding)
+            {
+
+                transform.Translate(5 * Time.deltaTime, 0, 0);
+            }
+            else if (boxiscolliding)
+            {
+
+
+                transform.Translate(0, 0, z);
+            }
             
+            transform.Rotate(0, x, 0);
+            
+            if (wasmoving)
+            {
+                transform.Translate(0, 0, airspeed);
+            }
+            if (wasattached)
+            {
+                transform.localPosition += new Vector3(xairspeed, yairspeed, zairspeed);
+            }
 
-            transform.Translate(0, 0, z);
-        }
-        transform.Rotate(0, x, 0);
-        if (wasmoving)
-        {
-            transform.Translate(0,0, airspeed);
-        }
-        if (wasattached)
-        {
-            transform.localPosition += new Vector3(xairspeed, yairspeed, zairspeed);
-        }
+            if (Input.GetKeyDown(KeyCode.Space) && boxiscolliding)
+            {
+                charjump();
 
-        if (Input.GetKeyDown(KeyCode.Space) && boxiscolliding)
-        {
-            charjump();
-           
-        }
-        else if (boxiscolliding==true)
-        {
-            anim.SetBool("jumping", false);
-        }
+            }
+            else if (boxiscolliding == true)
+            {
+                anim.SetBool("jumping", false);
+            }
             if (z > 0)
-        {
-            
-            anim.SetBool("running", true);
-        }
-        else if (z < 0)
-        {
+            {
 
-            
-            anim.SetBool("backstepping", true);
+                anim.SetBool("running", true);
+            }
+            else if (z < 0)
+            {
 
-        }
-        else
-        {
-            
-            anim.SetBool("running", false);
-            anim.SetBool("backstepping", false);
-        }
+
+                anim.SetBool("backstepping", true);
+
+            }
+            else
+            {
+
+                anim.SetBool("running", false);
+                anim.SetBool("backstepping", false);
+            }
+        
+        
     }
    
     

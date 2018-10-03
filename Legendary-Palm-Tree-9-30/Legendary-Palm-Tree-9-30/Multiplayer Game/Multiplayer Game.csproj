@@ -367,6 +367,7 @@
     <Compile Include="Assets\FirstScene\facecamera.cs" />
     <Compile Include="Assets\FirstScene\FPSCameraController.cs" />
     <Compile Include="Assets\FirstScene\grabrigidbodies.cs" />
+    <Compile Include="Assets\FirstScene\playergravitycontrol.cs" />
     <Compile Include="Assets\FirstScene\rainbowtext.cs" />
     <Compile Include="Assets\FirstScene\setuplocalplayer.cs" />
     <Compile Include="Assets\FirstScene\updatecubeposition.cs" />

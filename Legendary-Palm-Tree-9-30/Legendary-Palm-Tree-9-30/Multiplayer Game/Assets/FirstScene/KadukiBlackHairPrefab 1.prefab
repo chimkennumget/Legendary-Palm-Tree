@@ -30,6 +30,7 @@ GameObject:
   - component: {fileID: 114136998527938466}
   - component: {fileID: 114169836660164716}
   - component: {fileID: 65484810472641044}
+  - component: {fileID: 114803613767542446}
   m_Layer: 0
   m_Name: KadukiBlackHairPrefab 1
   m_TagString: Player
@@ -643,13 +644,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1846226358602544}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.373, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 4020802059526020}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4659606470328164
 Transform:
   m_ObjectHideFlags: 1
@@ -1047,6 +1048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e7c862882dacd245aee7eb489ee15d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1090403016897226}
   charactercamera: {fileID: 20453866889458476}
 --- !u!114 &114272063503029702
 MonoBehaviour:
@@ -1115,12 +1117,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3eb8943ab2342b438e3e12f17b96697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1090403016897226}
   wasmoving: 0
   wasattached: 0
   airspeed: 0
   xairspeed: 0
   yairspeed: 0
   zairspeed: 0
+  jumpforce: 350
   x: 0
   z: 0
 --- !u!114 &114802284071254860
@@ -1141,6 +1145,22 @@ MonoBehaviour:
   vertlowlimit: -45
   horspeed: 1
   vertspeed: 1
+--- !u!114 &114803613767542446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1090403016897226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813c259a0216cf54c889221e52ea7df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1090403016897226}
+  upsidedown: 0
+  playername: {fileID: 1846226358602544}
+  gravity: {fileID: 0}
+  stoprot: 1
 --- !u!114 &114983925700407528
 MonoBehaviour:
   m_ObjectHideFlags: 1
