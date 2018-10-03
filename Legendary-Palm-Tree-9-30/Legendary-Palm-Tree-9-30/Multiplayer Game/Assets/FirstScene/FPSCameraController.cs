@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Networking;
 
 public class FPSCameraController : MonoBehaviour {
     public GameObject player;
@@ -23,72 +23,75 @@ public class FPSCameraController : MonoBehaviour {
     }
     private void Update()
     {
-        initialrotation = player.transform.eulerAngles;
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            if (player.GetComponent<playergravitycontrol>().rightsideup == true)
+        
+            initialrotation = player.transform.eulerAngles;
+            if (Input.GetKeyDown(KeyCode.O))
             {
-                //this.transform.localEulerAngles = new Vector3(initialrotation.x /*+ vertadjust*/, initialrotation.y, initialrotation.z);
-                this.transform.localEulerAngles = new Vector3(20, 0, 0);
-                horval = 0;
-                vertval = 0;
+                if (player.GetComponent<playergravitycontrol>().rightsideup == true)
+                {
+                    //this.transform.localEulerAngles = new Vector3(initialrotation.x /*+ vertadjust*/, initialrotation.y, initialrotation.z);
+                    this.transform.localEulerAngles = new Vector3(20, 0, 0);
+                    horval = 0;
+                    vertval = 0;
+                }
+                if (player.GetComponent<playergravitycontrol>().upsidedown == true)
+                {
+                    //this.transform.localEulerAngles = new Vector3(initialrotation.x/*-vertadjust*/, initialrotation.y, initialrotation.z);
+                    this.transform.localEulerAngles = new Vector3(20, 0, 0);
+                    horval = 0;
+                    vertval = 0;
+                }
+                if (player.GetComponent<playergravitycontrol>().onbackwardswall == true)
+                {
+                    //this.transform.localEulerAngles = new Vector3(initialrotation.x, initialrotation.y/*-vertadjust*/, initialrotation.z);
+                    this.transform.localEulerAngles = new Vector3(20, 0, 0);
+                    horval = 0;
+                    vertval = 0;
+                }
+                if (player.GetComponent<playergravitycontrol>().onforwardwall == true)
+                {
+                    //this.transform.localEulerAngles = new Vector3(initialrotation.x, initialrotation.y/*+vertadjust*/, initialrotation.z);
+                    this.transform.localEulerAngles = new Vector3(20, 0, 0);
+                    horval = 0;
+                    vertval = 0;
+                }
+                if (player.GetComponent<playergravitycontrol>().onleftsidewall == true)
+                {
+                    //this.transform.localEulerAngles = new Vector3(initialrotation.x /*+ vertadjust*/, initialrotation.y, initialrotation.z);
+                    this.transform.localEulerAngles = new Vector3(20, 0, 0);
+                    horval = 0;
+                    vertval = 0;
+                }
+                if (player.GetComponent<playergravitycontrol>().onrightsidewall == true)
+                {
+                    //this.transform.localEulerAngles = new Vector3(initialrotation.x /*+ vertadjust*/, initialrotation.y, initialrotation.z );
+                    this.transform.localEulerAngles = new Vector3(20, 0, 0);
+                    horval = 0;
+                    vertval = 0;
+                }
             }
-            if (player.GetComponent<playergravitycontrol>().upsidedown == true)
+            if (Input.GetKey(KeyCode.J) && horval > leftlimit)
             {
-                //this.transform.localEulerAngles = new Vector3(initialrotation.x/*-vertadjust*/, initialrotation.y, initialrotation.z);
-                this.transform.localEulerAngles = new Vector3(20, 0, 0);
-                horval = 0;
-                vertval = 0;
+                transform.localEulerAngles += new Vector3(0, -horspeed, 0);
+                horval += -horspeed;
             }
-            if (player.GetComponent<playergravitycontrol>().onbackwardswall == true)
+            if (Input.GetKey(KeyCode.L) && horval < rightlimit)
             {
-                //this.transform.localEulerAngles = new Vector3(initialrotation.x, initialrotation.y/*-vertadjust*/, initialrotation.z);
-                this.transform.localEulerAngles = new Vector3(20, 0, 0);
-                horval = 0;
-                vertval = 0;
+                transform.localEulerAngles += new Vector3(0, horspeed, 0);
+                horval += horspeed;
             }
-            if (player.GetComponent<playergravitycontrol>().onforwardwall == true)
+            if (Input.GetKey(KeyCode.I) && vertval < vertuplimit)
             {
-                //this.transform.localEulerAngles = new Vector3(initialrotation.x, initialrotation.y/*+vertadjust*/, initialrotation.z);
-                this.transform.localEulerAngles = new Vector3(20, 0, 0);
-                horval = 0;
-                vertval = 0;
+                transform.localEulerAngles += new Vector3(-vertspeed, 0, 0);
+                vertval += vertspeed;
             }
-            if (player.GetComponent<playergravitycontrol>().onleftsidewall == true)
+            if (Input.GetKey(KeyCode.K) && vertval > vertlowlimit)
             {
-                //this.transform.localEulerAngles = new Vector3(initialrotation.x /*+ vertadjust*/, initialrotation.y, initialrotation.z);
-                this.transform.localEulerAngles = new Vector3(20, 0, 0);
-                horval = 0;
-                vertval = 0;
+                transform.localEulerAngles += new Vector3(vertspeed, 0, 0);
+                vertval += -vertspeed;
             }
-            if (player.GetComponent<playergravitycontrol>().onrightsidewall == true)
-            {
-                //this.transform.localEulerAngles = new Vector3(initialrotation.x /*+ vertadjust*/, initialrotation.y, initialrotation.z );
-                this.transform.localEulerAngles = new Vector3(20, 0, 0);
-                horval = 0;
-                vertval = 0;
-            }
-        }
-        if (Input.GetKey(KeyCode.J)&& horval>leftlimit)
-        {
-            transform.localEulerAngles += new Vector3(0, -horspeed, 0);
-            horval += -horspeed;
-        }
-        if (Input.GetKey(KeyCode.L) && horval < rightlimit)
-        {
-            transform.localEulerAngles += new Vector3(0, horspeed, 0);
-            horval += horspeed;
-        }
-        if (Input.GetKey(KeyCode.I)&& vertval < vertuplimit)
-        {
-            transform.localEulerAngles += new Vector3(-vertspeed, 0, 0);
-            vertval += vertspeed;
-        }
-        if (Input.GetKey(KeyCode.K) && vertval >vertlowlimit)
-        {
-            transform.localEulerAngles += new Vector3(vertspeed, 0, 0);
-            vertval += -vertspeed;
-        }
+        
+        
     }
 }
 

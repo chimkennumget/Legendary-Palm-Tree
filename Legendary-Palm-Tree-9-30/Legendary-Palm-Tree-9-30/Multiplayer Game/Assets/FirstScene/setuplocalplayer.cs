@@ -21,7 +21,7 @@ public class setuplocalplayer : NetworkBehaviour {
             }
         }
     }
-
+    
     [Command]
     public void CmdChangeName(string newName)
     {
@@ -38,15 +38,27 @@ public class setuplocalplayer : NetworkBehaviour {
             GetComponent<CharacterMovement>().enabled = true;
             //Camera.main.transform.position = this.transform.position -
             //    this.transform.forward * 4 + this.transform.up * 3;
-           // Camera.main.transform.LookAt(this.transform.position);
+            //Camera.main.transform.LookAt(this.transform.position);
            // Camera.main.transform.parent = this.transform;
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        if (this.GetComponent<NetworkIdentity>().isLocalPlayer)
+        {
+            fpscamera.enabled = true;
+        }
+        else
+        {
+            fpscamera.enabled = false;
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         //if (isLocalPlayer)
-            this.GetComponentInChildren<TextMesh>().text = pname;
-        	
-	}
+        this.GetComponentInChildren<TextMesh>().text = pname;
+
+        
+    }
+
+        
 }
