@@ -15,26 +15,50 @@ public class FPSCameraController : MonoBehaviour {
     public int vertspeed =1;
     Vector3 initialrotation;
     Vector3 initcamrot;
-    
+    public int vertadjust;
 
     private void Start()
     {
-        //initcamrot = this.transform.localEulerAngles;
+        vertadjust = 20;
     }
     private void Update()
     {
         initialrotation = player.transform.eulerAngles;
         if (Input.GetKeyDown(KeyCode.O))
         {
-            if (player.GetComponent<playergravitycontrol>().upsidedown == false)
+            if (player.GetComponent<playergravitycontrol>().rightsideup == true)
             {
-                this.transform.localEulerAngles = new Vector3(initialrotation.x + 20, initialrotation.y, initialrotation.z);
+                this.transform.localEulerAngles = new Vector3(initialrotation.x + vertadjust, initialrotation.y, initialrotation.z);
                 horval = 0;
                 vertval = 0;
             }
             if (player.GetComponent<playergravitycontrol>().upsidedown == true)
             {
-                this.transform.eulerAngles = new Vector3(initialrotation.x-20, initialrotation.y, initialrotation.z);
+                this.transform.eulerAngles = new Vector3(initialrotation.x-vertadjust, initialrotation.y, initialrotation.z);
+                horval = 0;
+                vertval = 0;
+            }
+            if (player.GetComponent<playergravitycontrol>().onbackwardswall == true)
+            {
+                this.transform.eulerAngles = new Vector3(initialrotation.x, initialrotation.y-vertadjust, initialrotation.z);
+                horval = 0;
+                vertval = 0;
+            }
+            if (player.GetComponent<playergravitycontrol>().onforwardwall == true)
+            {
+                this.transform.eulerAngles = new Vector3(initialrotation.x, initialrotation.y+vertadjust, initialrotation.z);
+                horval = 0;
+                vertval = 0;
+            }
+            if (player.GetComponent<playergravitycontrol>().onleftsidewall == true)
+            {
+                this.transform.eulerAngles = new Vector3(initialrotation.x + vertadjust, initialrotation.y, initialrotation.z);
+                horval = 0;
+                vertval = 0;
+            }
+            if (player.GetComponent<playergravitycontrol>().onrightsidewall == true)
+            {
+                this.transform.eulerAngles = new Vector3(initialrotation.x + vertadjust, initialrotation.y, initialrotation.z );
                 horval = 0;
                 vertval = 0;
             }
