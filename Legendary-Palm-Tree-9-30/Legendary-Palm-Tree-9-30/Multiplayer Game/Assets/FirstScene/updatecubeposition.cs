@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class updatecubeposition : MonoBehaviour {
     Vector3 returnpoint;
+    
     public Vector3 currentspeed;
     bool changedirection;
 	// Use this for initialization
@@ -13,13 +14,13 @@ public class updatecubeposition : MonoBehaviour {
 	}
 	void movecube()
     {
-        if (this.transform.position.z < returnpoint.z + 5 && changedirection == false)
+        if (this.transform.localPosition.z < returnpoint.z + 5 && changedirection == false)
         {
             this.transform.Translate(0, 0, Time.deltaTime);
             currentspeed = new Vector3(0, 0, Time.deltaTime);
         }
         else { changedirection = true; };
-        if (this.transform.position.z > returnpoint.z - 5 && changedirection == true )
+        if (this.transform.localPosition.z > returnpoint.z - 5 && changedirection == true )
         {
             this.transform.Translate(0, 0, -Time.deltaTime);
             currentspeed = new Vector3(0, 0, -Time.deltaTime);

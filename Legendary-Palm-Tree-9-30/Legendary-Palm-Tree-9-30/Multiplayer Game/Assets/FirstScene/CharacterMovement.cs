@@ -6,16 +6,16 @@ using System.Collections;
 
 public class CharacterMovement : MonoBehaviour
 {
-    
+    GameObject objattachedto;
     Animator anim;
     GameObject boxxy;
     public bool boxiscolliding;
     public GameObject player;
     Vector3 startingpoint;
-  
+    attachplayer ap;
     void Start()
     {
-       
+        
         startingpoint = gameObject.transform.position;
         anim = this.GetComponent<Animator>();
         boxxy = GameObject.Find("Cube");
@@ -32,21 +32,11 @@ public class CharacterMovement : MonoBehaviour
     public float jumpforce =350;
     public void charjump()
     {
-        if (z > 0 || z<0)
-        {
-            gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(z, jumpforce, 0));
+        
+            gameObject.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, jumpforce, 0));
             airspeed = z;
             wasmoving = true;
-
-        }
-        else
-        {
-            gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpforce, 0));
-        }
-            
-        
-        boxiscolliding = false;
-        
+ 
         anim.SetBool("jumping", true);
         
     }
@@ -55,15 +45,25 @@ public class CharacterMovement : MonoBehaviour
     {
         if (collision.gameObject)
         {
+            objattachedto = collision.gameObject;
+            Debug.Log("onground");
             boxiscolliding = true;
             wasmoving = false;
             wasattached = false;
         }
     }
-   
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject)
+        {
+            Debug.Log("in the air");
+            boxiscolliding = false;
+        }
+    }
+
     public float x;
      public float z;
-    void FixedUpdate()
+    void Update()
     {
         
         
@@ -86,12 +86,12 @@ public class CharacterMovement : MonoBehaviour
 
                 transform.Translate(5 * Time.deltaTime, 0, 0);
             }
-            else if (boxiscolliding)
-            {
 
 
-                transform.Translate(0, 0, z);
-            }
+        //if (anim.GetBool("jumping")==false)
+        //{
+            transform.Translate(0, 0, z);
+        //}
             
             transform.Rotate(0, x, 0);
             
@@ -101,11 +101,12 @@ public class CharacterMovement : MonoBehaviour
             }
             if (wasattached)
             {
-                transform.localPosition += new Vector3(xairspeed, yairspeed, zairspeed);
+                transform.Translate(xairspeed, yairspeed, zairspeed, objattachedto.transform);
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && boxiscolliding)
+            if (Input.GetKeyDown(KeyCode.Space) && anim.GetBool("jumping")==false)
             {
+            Debug.Log("jump");
                 charjump();
 
             }

@@ -33,7 +33,7 @@ public class playergravitycontrol : MonoBehaviour {
             
 
                     this.transform.Translate(0, 1, 0);
-            player.GetComponent<CharacterMovement>().jumpforce = -350;
+            //player.GetComponent<CharacterMovement>().jumpforce = -350;
 
             this.transform.eulerAngles = new Vector3(this.transform.rotation.x, this.transform.rotation.y, 90);
             //playername.transform.rotation = new Quaternion(180, this.transform.rotation.y, this.transform.rotation.z, this.transform.rotation.w);
@@ -50,7 +50,7 @@ public class playergravitycontrol : MonoBehaviour {
 
 
             this.transform.Translate(0, 1, 0);
-            player.GetComponent<CharacterMovement>().jumpforce = -350;
+            //player.GetComponent<CharacterMovement>().jumpforce = -350;
 
             this.transform.eulerAngles = new Vector3(-90, this.transform.rotation.y, this.transform.rotation.z);
             //playername.transform.rotation = new Quaternion(180, this.transform.rotation.y, this.transform.rotation.z, this.transform.rotation.w);
@@ -67,7 +67,7 @@ public class playergravitycontrol : MonoBehaviour {
 
 
             this.transform.Translate(0, 1, 0);
-            player.GetComponent<CharacterMovement>().jumpforce = -350;
+            //player.GetComponent<CharacterMovement>().jumpforce = -350;
 
             this.transform.eulerAngles = new Vector3(90, this.transform.rotation.y, this.transform.rotation.z);
             //playername.transform.rotation = new Quaternion(180, this.transform.rotation.y, this.transform.rotation.z, this.transform.rotation.w);
@@ -83,7 +83,7 @@ public class playergravitycontrol : MonoBehaviour {
         {
             
             this.transform.Translate(0, 1, 0);
-            player.GetComponent<CharacterMovement>().jumpforce = -350;
+            //player.GetComponent<CharacterMovement>().jumpforce = -350;
 
             this.transform.eulerAngles = new Vector3(this.transform.rotation.x, this.transform.rotation.y, -90);
             //playername.transform.rotation = new Quaternion(180, this.transform.rotation.y, this.transform.rotation.z, this.transform.rotation.w);
@@ -100,7 +100,7 @@ public class playergravitycontrol : MonoBehaviour {
         {
             
             this.transform.Translate(0, 1, 0);
-            player.GetComponent<CharacterMovement>().jumpforce = -350;
+            //player.GetComponent<CharacterMovement>().jumpforce = -350;
 
             this.transform.eulerAngles = new Vector3(180, this.transform.rotation.y, this.transform.rotation.z);
             //playername.transform.rotation = new Quaternion(180, this.transform.rotation.y, this.transform.rotation.z, this.transform.rotation.w);
@@ -116,7 +116,7 @@ public class playergravitycontrol : MonoBehaviour {
             
             player.GetComponent<CharacterMovement>().enabled = false;
             this.transform.Translate(0, 1, 0);
-            player.GetComponent<CharacterMovement>().jumpforce = 350;
+            //player.GetComponent<CharacterMovement>().jumpforce = 350;
 
             this.transform.eulerAngles = new Vector3(0, this.transform.rotation.y, this.transform.rotation.z);
             //playername.transform.rotation = new Quaternion(0, this.transform.rotation.y, this.transform.rotation.z, this.transform.rotation.w);

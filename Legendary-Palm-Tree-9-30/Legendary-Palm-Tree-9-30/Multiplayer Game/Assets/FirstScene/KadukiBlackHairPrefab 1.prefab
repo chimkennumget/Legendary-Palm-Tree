@@ -951,7 +951,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1, z: 0.4}
+  m_Size: {x: 0.9, y: 1.05, z: 0.5}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!81 &81088793996503998
 AudioListener:
@@ -1117,6 +1117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3eb8943ab2342b438e3e12f17b96697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boxiscolliding: 0
   player: {fileID: 1090403016897226}
   wasmoving: 0
   wasattached: 0
@@ -1145,6 +1146,7 @@ MonoBehaviour:
   vertlowlimit: -45
   horspeed: 1
   vertspeed: 1
+  vertadjust: 0
 --- !u!114 &114803613767542446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1157,10 +1159,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1090403016897226}
+  rightsideup: 0
   upsidedown: 0
+  onforwardwall: 0
+  onbackwardswall: 0
+  onleftsidewall: 0
+  onrightsidewall: 0
   playername: {fileID: 1846226358602544}
   gravity: {fileID: 0}
-  stoprot: 1
 --- !u!114 &114983925700407528
 MonoBehaviour:
   m_ObjectHideFlags: 1
