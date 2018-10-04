@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8c3cdd9b528414fbb739e89603fed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1090403016897226}
   rightsideup: 0
   upsidedown: 0
   onforwardwall: 0

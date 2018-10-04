@@ -194,6 +194,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 2cd041dc42ff26bda18e9b7e054e0c83 Assembly-CSharp.dll:emotitron.NST.Sample.NSTSamplePlayer
+1ea194c1aef0ae72f04233c1ef388ae4 Assembly-CSharp.dll:.relativegravitycontrol
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:emotitron.NST.NSTHitGroupsSettings
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Prototype.NetworkLobby.DraggablePanel
 5079c513c451c9e9bc578838aa401006 Assembly-CSharp.dll:.updatecubeposition

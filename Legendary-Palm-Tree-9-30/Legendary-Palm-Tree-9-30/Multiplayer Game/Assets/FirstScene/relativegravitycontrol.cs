@@ -86,34 +86,36 @@ public class relativegravitycontrol : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         RaycastHit hit;
-        if (Physics.SphereCast(transform.position, 0.5f, -transform.up, out hit, 50))
+        if (Physics.SphereCast(transform.position, 0.5f, -transform.up, out hit, 5))
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, hit.normal), hit.normal), Time.deltaTime * 5.0f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, hit.normal), hit.normal), Time.deltaTime * 500.0f);
         }
     }
     private void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (player.GetComponent<CharacterMovement>().boxiscolliding == true)
         {
-            gravityleftchange();
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                gravityleftchange();
+            }
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                gravityrightchange();
+            }
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                gravityforwardchange();
+            }
+            if (Input.GetKeyDown(KeyCode.V) || Input.GetKeyDown(KeyCode.B))
+            {
+                gravitybackwardchange();
+            }
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                gravityflipchange();
+            }
         }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            gravityrightchange();
-        }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            gravityforwardchange();
-        }
-        if (Input.GetKeyDown(KeyCode.V)|| Input.GetKeyDown(KeyCode.B))
-        {
-            gravitybackwardchange();
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            gravityflipchange();
-        }
-
 
     }
 }
