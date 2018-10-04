@@ -369,6 +369,7 @@
     <Compile Include="Assets\FirstScene\grabrigidbodies.cs" />
     <Compile Include="Assets\FirstScene\playergravitycontrol.cs" />
     <Compile Include="Assets\FirstScene\rainbowtext.cs" />
+    <Compile Include="Assets\FirstScene\relativegravitycontrol.cs" />
     <Compile Include="Assets\FirstScene\setuplocalplayer.cs" />
     <Compile Include="Assets\FirstScene\updatecubeposition.cs" />
     <Compile Include="Assets\Lobby\Scripts\DraggablePanel.cs" />

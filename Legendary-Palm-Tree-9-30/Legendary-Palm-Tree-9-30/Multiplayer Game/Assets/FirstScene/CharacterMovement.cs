@@ -19,7 +19,7 @@ public class CharacterMovement : MonoBehaviour
         startingpoint = gameObject.transform.position;
         anim = this.GetComponent<Animator>();
         boxxy = GameObject.Find("Cube");
-        this.GetComponent<Rigidbody>().freezeRotation = true;
+       
     }
 
 
