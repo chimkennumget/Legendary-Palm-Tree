@@ -13,13 +13,16 @@ public class CharacterMovement : MonoBehaviour
     public GameObject player;
     Vector3 startingpoint;
     attachplayer ap;
+    Rigidbody rb;
     void Start()
     {
         
         startingpoint = gameObject.transform.position;
         anim = this.GetComponent<Animator>();
         boxxy = GameObject.Find("Cube");
-        this.GetComponent<Rigidbody>().freezeRotation = true;
+        rb = this.GetComponent<Rigidbody>();
+        //rb.constraints = RigidbodyConstraints.FreezeRotationY;
+        
     }
 
 

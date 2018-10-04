@@ -23,7 +23,7 @@ public class playergravitycontrol : MonoBehaviour {
        
         rigid = this.GetComponent<Rigidbody>();//grab rigidbody component
         rigid.useGravity = false;//deactivate rigidbody gravity
-        gravity = gameObject.AddComponent<ConstantForce>();//create constant force to relpace gravity acting on character
+        gravity = gameObject.AddComponent<ConstantForce>();//create constant force to replace gravity acting on character
         gravity.force = new Vector3(0.0f, -9.81f, 0.0f);//set initial gravity
     }
     void attachforwardwall()

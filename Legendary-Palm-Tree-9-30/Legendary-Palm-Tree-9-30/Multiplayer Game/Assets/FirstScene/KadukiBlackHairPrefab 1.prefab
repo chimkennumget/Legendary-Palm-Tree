@@ -31,6 +31,7 @@ GameObject:
   - component: {fileID: 114169836660164716}
   - component: {fileID: 65484810472641044}
   - component: {fileID: 114803613767542446}
+  - component: {fileID: 114240489326107170}
   m_Layer: 0
   m_Name: KadukiBlackHairPrefab 1
   m_TagString: Player
@@ -1037,6 +1038,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b9949233c3fae4cbd17f631934d24b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114240489326107170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1090403016897226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8c3cdd9b528414fbb739e89603fed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rightsideup: 0
+  upsidedown: 0
+  onforwardwall: 0
+  onbackwardswall: 0
+  onleftsidewall: 0
+  onrightsidewall: 0
+  playername: {fileID: 0}
+  gravity: {fileID: 0}
 --- !u!114 &114254143256016610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1153,7 +1174,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1090403016897226}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 813c259a0216cf54c889221e52ea7df4, type: 3}
   m_Name: 
