@@ -72,4 +72,7 @@ Corey Duncan,
 Cullen Yuska, 
 Daniel Heinsch
 
+### Thanks to Shiina Tenyo for their free voxel girl pack unity asset
+[Link to creators site](http://fire-emotion.com/)
+
 
