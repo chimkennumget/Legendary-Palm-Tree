@@ -17,6 +17,8 @@
 
 ### Controls(since there isn't a help menu atm)
 - Use mouse to navigate network lobby. can create LAN or unity matchmaking lobbies. If alone and you press ready, matchmaking will begin as long as everyone else in lobby has pressed ready
+![Lobby](https://github.com/chimkennumget/Legendary-Palm-Tree/blob/master/lobby.png)
+
 - Game is currently playable(testable) solo
 - esc brings up exit menu however it is currently not working so external closing and restarting is required to begin a new game
 - WASD or arrow keys for movement
@@ -30,6 +32,8 @@
 - Space to jump
 - Shift + A for left sidestepping
 - Sift + D for right sidestepping
+![Current InGame](https://github.com/chimkennumget/Legendary-Palm-Tree/blob/master/mazegamekaduki.png)
+
 
 
 ### Link to Unity API for those interested in learning about the development platform
