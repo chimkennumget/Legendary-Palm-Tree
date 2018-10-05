@@ -7,24 +7,19 @@ using UnityEngine;
 public class relativegravitycontrol : MonoBehaviour
 {
 
-    public GameObject player;
-    public bool rightsideup;
-    public bool upsidedown;
-    public bool onforwardwall;
-    public bool onbackwardswall;
-    public bool onleftsidewall;
-    public bool onrightsidewall;
+    public GameObject player;//reference to ourselves
+    
 
     
-    Rigidbody rigid;
-    public GameObject playername;
-    public ConstantForce gravity;
-    int listsize = 6;
+    Rigidbody rigid;//reference to our rigidbody
+    public GameObject playername;//reference to playername
+    public ConstantForce gravity;//sets up gravity of player
+    
 
-    // Use this for initialization
+    // 
     void Start()
     {
-        rightsideup = true;
+        
 
         rigid = this.GetComponent<Rigidbody>();//grab rigidbody component
         rigid.useGravity = false;//deactivate rigidbody gravity
@@ -33,7 +28,7 @@ public class relativegravitycontrol : MonoBehaviour
     }
     
         
-    
+    //adjusts gravity relative to players left side and rotates them
     void gravityleftchange()
     {
 
@@ -49,6 +44,7 @@ public class relativegravitycontrol : MonoBehaviour
 
 
     }
+    //adjusts gravity relative to players right side and rotates them
     void gravityrightchange()
     {
         this.transform.Translate(0, 1, 0);
@@ -57,7 +53,7 @@ public class relativegravitycontrol : MonoBehaviour
         this.transform.localEulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y, this.transform.localEulerAngles.z + 90);
         
     }
-    //changing on x axis has weird issues so alternative code is required
+    //changing on x axis has weird issues so alternative code is required but this changes gravity to forward of current orientation and rotates character
     void gravityforwardchange()
     {
         this.transform.Translate(0, 1, 0);
@@ -66,7 +62,7 @@ public class relativegravitycontrol : MonoBehaviour
         //this.transform.localEulerAngles = new Vector3(this.transform.localEulerAngles.x + 89, this.transform.eulerAngles.y, this.transform.eulerAngles.z);
         transform.RotateAround(transform.position, -transform.right,  90f);
     }
-    //changing on x axis has weird issues so alternative code is required
+    //changing on x axis has weird issues so alternative code is required changes gravity to backwards of current orientation and rotates character
     void gravitybackwardchange()
     {
         this.transform.Translate(0, 1, 0);
@@ -76,6 +72,7 @@ public class relativegravitycontrol : MonoBehaviour
 
 
     }
+    //flips gravity upsidedown relative to current orientation and rotates character
     void gravityflipchange()
     {
         this.transform.Translate(0, 1, 0);
@@ -83,6 +80,7 @@ public class relativegravitycontrol : MonoBehaviour
         this.transform.localEulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y, this.transform.localEulerAngles.z+180);
 
     }
+    //checks for continuous collisions and sends out a sphere cast to normalize player rotation to the surface normal so they always adjust to be standing
     private void OnCollisionStay(Collision collision)
     {
         RaycastHit hit;
@@ -91,6 +89,7 @@ public class relativegravitycontrol : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, hit.normal), hit.normal), Time.deltaTime * 500.0f);
         }
     }
+    //checks for key presses to run to related gravity change functions if player is not in the air
     private void LateUpdate()
     {
         if (player.GetComponent<CharacterMovement>().boxiscolliding == true)
