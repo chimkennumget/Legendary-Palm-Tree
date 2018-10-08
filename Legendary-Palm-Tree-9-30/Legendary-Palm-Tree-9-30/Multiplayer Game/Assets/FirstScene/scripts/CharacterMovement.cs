@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
 
 
 
-public class CharacterMovement : MonoBehaviour
+public class CharacterMovement : NetworkBehaviour
 {
     
     GameObject clone;
@@ -19,18 +20,16 @@ public class CharacterMovement : MonoBehaviour
     Rigidbody rb;
     
     bool threw;
-    void throwbomb()
+    
+    [Command]
+    void Cmdthrowbomb()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            clone = Instantiate(bomb, new Vector3(this.transform.localPosition.x, this.transform.localPosition.y+1.5f, this.transform.localPosition.z), transform.localRotation); //the clone variable holds our instantiate action
+
+            GameObject clone = Instantiate(bomb, new Vector3(this.transform.localPosition.x, this.transform.localPosition.y+1.5f, this.transform.localPosition.z), transform.localRotation) as GameObject; //the clone variable holds our instantiate action
+            clone.GetComponent<Rigidbody>().isKinematic = false;
             Rigidbody clonerb = clone.GetComponent<Rigidbody>();
-            
-            clonerb.AddRelativeForce(Vector3.forward * 500);
-            
-        }
-       
-            
+            clonerb.AddRelativeForce(Vector3.forward * 800);
+            NetworkServer.Spawn(clone);
         
     }
     
@@ -92,8 +91,11 @@ public class CharacterMovement : MonoBehaviour
     {
 
 
-        throwbomb();
-       
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Cmdthrowbomb();
+        }
+
             if (gameObject.transform.position.y <= -20)
             {
 
