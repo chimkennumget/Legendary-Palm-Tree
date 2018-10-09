@@ -7,7 +7,7 @@ using System.Collections;
 
 public class CharacterMovement : NetworkBehaviour
 {
-    
+    public GameObject bombspawn;
     GameObject clone;
     public GameObject bomb;
     GameObject objattachedto;
@@ -24,8 +24,8 @@ public class CharacterMovement : NetworkBehaviour
     [Command]
     void Cmdthrowbomb()
     {
-
-            GameObject clone = Instantiate(bomb, new Vector3(this.transform.localPosition.x, this.transform.localPosition.y+1.5f, this.transform.localPosition.z), transform.localRotation) as GameObject; //the clone variable holds our instantiate action
+        
+            GameObject clone = Instantiate(bomb,bombspawn.transform.position, transform.localRotation) as GameObject; //the clone variable holds our instantiate action
             clone.GetComponent<Rigidbody>().isKinematic = false;
             Rigidbody clonerb = clone.GetComponent<Rigidbody>();
             clonerb.AddRelativeForce(Vector3.forward * 800);
@@ -51,7 +51,7 @@ public class CharacterMovement : NetworkBehaviour
     public float xairspeed=0;
     public float yairspeed=0;
     public float zairspeed=0;
-    public float jumpforce =350;
+    public float jumpforce =250;
     public void charjump()
     {
         

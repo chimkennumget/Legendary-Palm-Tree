@@ -832,7 +832,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1673059523297454}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1132,7 +1132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3eb8943ab2342b438e3e12f17b96697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boom: {fileID: 198000012942003240, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 2}
   bomb: {fileID: 1441733778982632, guid: f6e8c8f1ae55e9d41a079250166e6533, type: 2}
   boxiscolliding: 0
   player: {fileID: 1090403016897226}

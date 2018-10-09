@@ -8,8 +8,8 @@ public class relativegravitycontrol : MonoBehaviour
 {
 
     public GameObject player;//reference to ourselves
-    
 
+    int i = 0;
     
     Rigidbody rigid;//reference to our rigidbody
     public GameObject playername;//reference to playername
@@ -75,19 +75,25 @@ public class relativegravitycontrol : MonoBehaviour
     //flips gravity upsidedown relative to current orientation and rotates character
     void gravityflipchange()
     {
-        this.transform.Translate(0, 1, 0);
-
-        this.transform.localEulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y, this.transform.localEulerAngles.z+180);
-
+        
+            this.transform.Translate(0, 1, 0);
+        
+            this.transform.localEulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y, this.transform.localEulerAngles.z + 180);
+        
     }
     //checks for continuous collisions and sends out a sphere cast to normalize player rotation to the surface normal so they always adjust to be standing
     private void OnCollisionStay(Collision collision)
     {
-        RaycastHit hit;
-        if (Physics.SphereCast(transform.position, 0.5f, -transform.up, out hit, 5))
-        {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, hit.normal), hit.normal), Time.deltaTime * 500.0f);
-        }
+        
+           // Debug.Log("isnormal");
+            RaycastHit hit;
+            if (Physics.SphereCast(transform.position, 0.1f, -transform.up, out hit, .02f))
+            //if (Physics.Raycast(transform.position, -transform.up, out hit, 1))
+            {
+                transform.localRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                //transform.localRotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, hit.normal), hit.normal), Time.deltaTime * 500.0f);
+            }
+        
     }
     //checks for key presses to run to related gravity change functions if player is not in the air
     private void LateUpdate()

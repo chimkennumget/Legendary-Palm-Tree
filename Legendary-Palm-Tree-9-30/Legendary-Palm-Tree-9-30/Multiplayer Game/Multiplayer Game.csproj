@@ -369,6 +369,7 @@
     <Compile Include="Assets\emotitron\Utilities\SmartVars\SmartVars.cs" />
     <Compile Include="Assets\emotitron\Utilities\StringTools.cs" />
     <Compile Include="Assets\emotitron\Utilities\UniqueNamesList.cs" />
+    <Compile Include="Assets\fallthenreset.cs" />
     <Compile Include="Assets\FirstScene\scripts\attachplayer.cs" />
     <Compile Include="Assets\FirstScene\scripts\CharacterMovement.cs" />
     <Compile Include="Assets\FirstScene\scripts\explodebomb.cs" />
@@ -436,6 +437,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
+    <Compile Include="Assets\pushoff.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />

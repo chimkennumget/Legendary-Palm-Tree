@@ -12,9 +12,10 @@ public class explodebomb : NetworkBehaviour {
     public float power=40;
     public float radius=10;
     public float upforce=10;
-    public float countdown;
+    public float countdown=0;
     public bool starttimer=false;
     bool destroytimer = false;
+    bool hitsomething = false;
     float duration;
     float certaindeath = 0;
     
@@ -27,42 +28,36 @@ public class explodebomb : NetworkBehaviour {
     void Rpcexplosioneffect()
     {
         explosion = Instantiate(psholder, bomb.transform.position, bomb.transform.rotation) as GameObject;
-        //parts = explosion.GetComponent<ParticleSystem>();
-        //duration = parts.main.duration;
-        
-
-        
-
-
-
     }
 
     // Update is called once per frame
-    void Update () {
+    void LateUpdate () {
         
         
         if (starttimer)
         {
-            countdown += Time.deltaTime;
+        
+            Debug.Log("greater than 3");
+            Rpcexplode();
+            starttimer = false;
+            Debug.Log("starttimer");
+            countdown = 0;
+
         }
-        if(destroytimer)
+        if (destroytimer)
         {
+            Debug.Log("destroytimer is on");
             countdown += Time.deltaTime;
             if (countdown > 2)
             {
+                Debug.Log("goodbye");
                 destroytimer = false;
                 countdown = 0;
                 Rpcgoodbye();
                 
             }
         }
-        if(countdown > 3)
-        {
-            Rpcexplode();
-            starttimer = false;
-            countdown = 0;
-            
-        }
+        
         
 	}
     [ClientRpc]
@@ -109,7 +104,11 @@ void Rpcexplode()
     }
     private void OnCollisionEnter(Collision collision)
     {
-        starttimer = true;
+        if (hitsomething == false)
+        {
+            hitsomething = true;
+            starttimer = true;
+        }
         
     
     }
