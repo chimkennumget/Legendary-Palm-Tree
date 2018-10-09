@@ -97,7 +97,8 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 dc78624554e910c76d194ff50ce5b07a Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyServerEntry
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DebugWidget
 a7db36c2161d88fbe018b33090fefc02 Assembly-CSharp.dll:emotitron.NST.NSTElementsEngine
-025cf5fe1cbfac8b01b30ff7bfdcdff5 Assembly-CSharp.dll:.CharacterMovement
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.fallthenreset
+0a63ad83f1edbac57e64cf9d6db5b9fb Assembly-CSharp.dll:.CharacterMovement
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 4b12dd839b2293f8457cd67cc3610b85 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -205,6 +206,7 @@ f671a42aea5f34fec6a4450a3668c615 Assembly-CSharp.dll:UnityEngine.PostProcessing.
 2cd041dc42ff26bda18e9b7e054e0c83 Assembly-CSharp.dll:emotitron.NST.Sample.NSTSamplePlayer
 8c8f28ddd7fa8955752da20f79f58acc Assembly-CSharp.dll:.relativegravitycontrol
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:emotitron.NST.NSTHitGroupsSettings
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.pushoff
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Prototype.NetworkLobby.DraggablePanel
 5079c513c451c9e9bc578838aa401006 Assembly-CSharp.dll:.updatecubeposition
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:emotitron.NST.NSTMaster
