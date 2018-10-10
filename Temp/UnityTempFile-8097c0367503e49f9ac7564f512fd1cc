@@ -1,0 +1,366 @@
+-debug
+-target:library
+-nowarn:0169
+-langversion:4
+-out:'Temp/Assembly-CSharp.dll'
+-unsafe
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEditor.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CoreModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.PhysicsModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VehiclesModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClothModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AnimationModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UIModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.IMGUIModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UNETModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.DirectorModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.WebModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ARModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VRModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UIElementsModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AudioModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.GameCenterModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.GridModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.InputModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.Physics2DModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TerrainModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TilemapModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VideoModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.WindModule.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll'
+-r:'Assets/emotitron/Compression/plugins/ArraySerializer.dll'
+-r:'Assets/emotitron/Compression/plugins/Bitstream.dll'
+-r:'Assets/emotitron/Compression/plugins/PrimitiveSerializer.dll'
+-r:'Assets/emotitron/Compression/TransformCrusher/plugins/FloatCrusher.dll'
+-r:'Assets/emotitron/Compression/TransformCrusher/plugins/QuatCompress.dll'
+-r:'Assets/emotitron/Utilities/plugins/DebugX.dll'
+-r:'/Users/afrazier/Library/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll'
+-r:'/Users/afrazier/Library/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll'
+-r:'/Users/afrazier/Library/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll'
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_5_OR_NEWER
+-define:UNITY_5_6_OR_NEWER
+-define:UNITY_2017_1_OR_NEWER
+-define:UNITY_2017_2_OR_NEWER
+-define:UNITY_2017_3_OR_NEWER
+-define:UNITY_2017_4_OR_NEWER
+-define:UNITY_2017_4_12
+-define:UNITY_2017_4
+-define:UNITY_2017
+-define:PLATFORM_ARCH_64
+-define:UNITY_64
+-define:UNITY_ANALYTICS
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_DUCK_TYPING
+-define:ENABLE_GENERICS
+-define:ENABLE_PVR_GI
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_SPRITERENDERER_FLIPPING
+-define:ENABLE_SPRITES
+-define:ENABLE_GRID
+-define:ENABLE_TILEMAP
+-define:ENABLE_TERRAIN
+-define:ENABLE_RAKNET
+-define:ENABLE_DIRECTOR
+-define:ENABLE_UNET
+-define:ENABLE_LZMA
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_WEBCAM
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES_COLLAB
+-define:ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_HUB
+-define:ENABLE_CLOUD_PROJECT_ID
+-define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_HUB
+-define:ENABLE_EDITOR_HUB_LICENSE
+-define:ENABLE_WEBSOCKET_CLIENT
+-define:ENABLE_DIRECTOR_AUDIO
+-define:ENABLE_DIRECTOR_TEXTURE
+-define:ENABLE_TIMELINE
+-define:ENABLE_EDITOR_METRICS
+-define:ENABLE_EDITOR_METRICS_CACHING
+-define:ENABLE_NATIVE_ARRAY
+-define:ENABLE_SPRITE_MASKING
+-define:INCLUDE_DYNAMIC_GI
+-define:INCLUDE_GI
+-define:ENABLE_MONO_BDWGC
+-define:PLATFORM_SUPPORTS_MONO
+-define:RENDER_SOFTWARE_CURSOR
+-define:INCLUDE_PUBNUB
+-define:ENABLE_PLAYMODE_TESTS_RUNNER
+-define:ENABLE_VIDEO
+-define:ENABLE_RMGUI
+-define:ENABLE_PACKMAN
+-define:ENABLE_CUSTOM_RENDER_TEXTURE
+-define:ENABLE_STYLE_SHEETS
+-define:ENABLE_LOCALIZATION
+-define:PLATFORM_STANDALONE_OSX
+-define:PLATFORM_STANDALONE
+-define:UNITY_STANDALONE_OSX
+-define:UNITY_STANDALONE
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_GAMECENTER
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_MOVIES
+-define:ENABLE_NETWORK
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING
+-define:ENABLE_CLUSTERINPUT
+-define:ENABLE_VR
+-define:ENABLE_AR
+-define:ENABLE_SPATIALTRACKING
+-define:ENABLE_WEBSOCKET_HOST
+-define:ENABLE_MONO
+-define:NET_2_0_SUBSET
+-define:ENABLE_PROFILER
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_OSX
+-define:ENABLE_NATIVE_ARRAY_CHECKS
+-define:UNITY_TEAM_LICENSE
+'Assets/EffectExamples/Shared/Scripts/DecalDestroyer.cs'
+'Assets/EffectExamples/Shared/Scripts/ExtinguishableFire.cs'
+'Assets/EffectExamples/Shared/Scripts/GunAim.cs'
+'Assets/EffectExamples/Shared/Scripts/GunShoot.cs'
+'Assets/EffectExamples/Shared/Scripts/ParticleCollision.cs'
+'Assets/EffectExamples/Shared/Scripts/ParticleExamples.cs'
+'Assets/EffectExamples/Shared/Scripts/ParticleMenu.cs'
+'Assets/emotitron/Compression/TransformCrusher/BitstreamExtensions.cs'
+'Assets/emotitron/Compression/TransformCrusher/ElementCrusher.cs'
+'Assets/emotitron/Compression/TransformCrusher/FloatCrushDrawer.cs'
+'Assets/emotitron/Compression/TransformCrusher/QuatCrusher.cs'
+'Assets/emotitron/Compression/TransformCrusher/SolidTextures.cs'
+'Assets/emotitron/Compression/TransformCrusher/Structs/CompressedElement.cs'
+'Assets/emotitron/Compression/TransformCrusher/Structs/CompressedMatrix.cs'
+'Assets/emotitron/Compression/TransformCrusher/Structs/CompressedValue.cs'
+'Assets/emotitron/Compression/TransformCrusher/Structs/Element.cs'
+'Assets/emotitron/Compression/TransformCrusher/Structs/Matrix.cs'
+'Assets/emotitron/Compression/TransformCrusher/TransformCrusher.cs'
+'Assets/emotitron/Compression/TransformCrusher/TransformCrusherDrawer.cs'
+'Assets/emotitron/NST Core 5/Sample Scenes/Scripts/Ball.cs'
+'Assets/emotitron/NST Core 5/Sample Scenes/Scripts/Beam.cs'
+'Assets/emotitron/NST Core 5/Sample Scenes/Scripts/ControllerNonRB.cs'
+'Assets/emotitron/NST Core 5/Sample Scenes/Scripts/DebugText.cs'
+'Assets/emotitron/NST Core 5/Sample Scenes/Scripts/FPSDisplay.cs'
+'Assets/emotitron/NST Core 5/Sample Scenes/Scripts/Mover.cs'
+'Assets/emotitron/NST Core 5/Sample Scenes/Scripts/Rotator.cs'
+'Assets/emotitron/NST Core 5/Sample Scenes/Scripts/SpawnObject.cs'
+'Assets/emotitron/NST Core 5/Sample Scenes/Scripts/Startup.cs'
+'Assets/emotitron/NST Core 5/Scripts/Compression/StructToByteArray.cs'
+'Assets/emotitron/NST Core 5/Scripts/Compression/UdpKit/UdpByteConverter.cs'
+'Assets/emotitron/NST Core 5/Scripts/Compression/UdpKit/UdpKit.cs'
+'Assets/emotitron/NST Core 5/Scripts/Controller/ControllerInputMap.cs'
+'Assets/emotitron/NST Core 5/Scripts/Controller/MouseInputAxis.cs'
+'Assets/emotitron/NST Core 5/Scripts/InputSystem/InputSelector.cs'
+'Assets/emotitron/NST Core 5/Scripts/InputSystem/InputSelectorAxis.cs'
+'Assets/emotitron/NST Core 5/Scripts/InputSystem/InputSelectorBase.cs'
+'Assets/emotitron/NST Core 5/Scripts/InputSystem/InputSelectorKeyCode.cs'
+'Assets/emotitron/NST Core 5/Scripts/InputSystem/InputSelectorKeys.cs'
+'Assets/emotitron/NST Core 5/Scripts/InputSystem/InputSelectorTouchZone.cs'
+'Assets/emotitron/NST Core 5/Scripts/InputSystem/InputSelectorUIZone.cs'
+'Assets/emotitron/NST Core 5/Scripts/InputSystem/UIZone.cs'
+'Assets/emotitron/NST Core 5/Scripts/InputSystem/UIZoneSelector.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/BaseClasses/NSTComponent.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/BaseClasses/NSTMasterBehaviour.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/BaseClasses/NSTRootSingleton.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Elements/CompressedElement.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Elements/IElements.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Elements/NSTElementComponent.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Elements/NSTElementsEngine.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Elements/RotationElement.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Elements/TransformElement.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Enums/IncludedAxisEnum.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Enums/NSTEnums.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Enums/SendCullMaskEnum.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Frame.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/FrameBuffer.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/HealthSystem/IMonitorVitals.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/HealthSystem/IVitals.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/HealthSystem/Vital.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/HitGroups/HitGroupSelector.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/HitGroups/NSTHitGroupAssign.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/HitGroups/NSTHitGroupsSettings.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Interfaces/INSTCallbacks.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Interfaces/INSTSource.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Interfaces/IOfftick.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/MasterRTT.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/NetAdapter/MasterNetAdapter.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/NetAdapter/MasterNetCommon.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/NetAdapter/NetAdapterInterfaces.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/NetAdapter/NetAdapterTools.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/NetAdapter/NSTNetAdapter.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/NetAdapter/PUNSampleLauncher.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/NetAdapter/UNET/UnetExtensions.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/NetworkSyncTransform.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/NSTMapBounds.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/NSTMaster.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/NSTSettings.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/NSTTools.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/QuatCompress.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Rewind/IIncludeOnGhost.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Rewind/IRewind.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Sample/NSTSampleController.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Sample/NSTSampleHealth.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Sample/NSTSampleHealthUI.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Sample/NSTSamplePlayer.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Sample/NSTSamplePlayerSpawn.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Sample/NSTSampleProjectile.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Sample/NSTSampleWeapon.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Settings/DebuggingSettings.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Settings/HeaderSettings.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Settings/HitGroupSettings.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Settings/NetLibrarySettings.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Settings/SettingsScriptableObject.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Settings/WorldCompressionSettings.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Utility/BandwidthUsage.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Utility/IntegrityCheck.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/Weapon/INstProjectile.cs'
+'Assets/emotitron/NST Core 5/Scripts/NST/WorldVectorCompression.cs'
+'Assets/emotitron/Utilities/BitUtilities/BitTools.cs'
+'Assets/emotitron/Utilities/CollectBounds.cs'
+'Assets/emotitron/Utilities/CopyComponent.cs'
+'Assets/emotitron/Utilities/DebugWidget.cs'
+'Assets/emotitron/Utilities/DrawerUtils.cs'
+'Assets/emotitron/Utilities/FindAllObjectTypeInScene.cs'
+'Assets/emotitron/Utilities/GenericCast/GenericCast.cs'
+'Assets/emotitron/Utilities/GUITools/EditorUtils.cs'
+'Assets/emotitron/Utilities/GUITools/EnumMaskAttribute.cs'
+'Assets/emotitron/Utilities/GUITools/HelpAttribute.cs'
+'Assets/emotitron/Utilities/GUITools/InspectorUtils.cs'
+'Assets/emotitron/Utilities/GUITools/ScriptableObjectDrawer.cs'
+'Assets/emotitron/Utilities/LayerAndTagTools.cs'
+'Assets/emotitron/Utilities/Pooling/Pool.cs'
+'Assets/emotitron/Utilities/QuaternionUtils.cs'
+'Assets/emotitron/Utilities/Singleton.cs'
+'Assets/emotitron/Utilities/SlimMath/Half.cs'
+'Assets/emotitron/Utilities/SlimMath/HalfUtilities.cs'
+'Assets/emotitron/Utilities/SmartVars/GenericX.cs'
+'Assets/emotitron/Utilities/SmartVars/SmartVars.cs'
+'Assets/emotitron/Utilities/StringTools.cs'
+'Assets/emotitron/Utilities/UniqueNamesList.cs'
+'Assets/FirstScene/scripts/attachplayer.cs'
+'Assets/FirstScene/scripts/CharacterMovement.cs'
+'Assets/FirstScene/scripts/explodebomb.cs'
+'Assets/FirstScene/scripts/facecamera.cs'
+'Assets/FirstScene/scripts/FPSCameraController.cs'
+'Assets/FirstScene/scripts/grabrigidbodies.cs'
+'Assets/FirstScene/scripts/playergravitycontrol.cs'
+'Assets/FirstScene/scripts/rainbowtext.cs'
+'Assets/FirstScene/scripts/relativegravitycontrol.cs'
+'Assets/FirstScene/scripts/setuplocalplayer.cs'
+'Assets/FirstScene/scripts/updatecubeposition.cs'
+'Assets/Lobby/Scripts/DraggablePanel.cs'
+'Assets/Lobby/Scripts/EventSystemChecker.cs'
+'Assets/Lobby/Scripts/Lobby/LobbyCountdownPanel.cs'
+'Assets/Lobby/Scripts/Lobby/LobbyHook.cs'
+'Assets/Lobby/Scripts/Lobby/LobbyInfoPanel.cs'
+'Assets/Lobby/Scripts/Lobby/LobbyMainMenu.cs'
+'Assets/Lobby/Scripts/Lobby/LobbyManager.cs'
+'Assets/Lobby/Scripts/Lobby/LobbyPlayer.cs'
+'Assets/Lobby/Scripts/Lobby/LobbyPlayerList.cs'
+'Assets/Lobby/Scripts/Lobby/LobbyServerEntry.cs'
+'Assets/Lobby/Scripts/Lobby/LobbyServerList.cs'
+'Assets/Lobby/Scripts/Lobby/LobbyTopPanel.cs'
+'Assets/Mountain Terrain/Misc/CameraDefault.cs'
+'Assets/PostProcessing/Runtime/Attributes/GetSetAttribute.cs'
+'Assets/PostProcessing/Runtime/Attributes/MinAttribute.cs'
+'Assets/PostProcessing/Runtime/Attributes/TrackballAttribute.cs'
+'Assets/PostProcessing/Runtime/Attributes/TrackballGroupAttribute.cs'
+'Assets/PostProcessing/Runtime/Components/AmbientOcclusionComponent.cs'
+'Assets/PostProcessing/Runtime/Components/BloomComponent.cs'
+'Assets/PostProcessing/Runtime/Components/BuiltinDebugViewsComponent.cs'
+'Assets/PostProcessing/Runtime/Components/ChromaticAberrationComponent.cs'
+'Assets/PostProcessing/Runtime/Components/ColorGradingComponent.cs'
+'Assets/PostProcessing/Runtime/Components/DepthOfFieldComponent.cs'
+'Assets/PostProcessing/Runtime/Components/DitheringComponent.cs'
+'Assets/PostProcessing/Runtime/Components/EyeAdaptationComponent.cs'
+'Assets/PostProcessing/Runtime/Components/FogComponent.cs'
+'Assets/PostProcessing/Runtime/Components/FxaaComponent.cs'
+'Assets/PostProcessing/Runtime/Components/GrainComponent.cs'
+'Assets/PostProcessing/Runtime/Components/MotionBlurComponent.cs'
+'Assets/PostProcessing/Runtime/Components/ScreenSpaceReflectionComponent.cs'
+'Assets/PostProcessing/Runtime/Components/TaaComponent.cs'
+'Assets/PostProcessing/Runtime/Components/UserLutComponent.cs'
+'Assets/PostProcessing/Runtime/Components/VignetteComponent.cs'
+'Assets/PostProcessing/Runtime/Models/AmbientOcclusionModel.cs'
+'Assets/PostProcessing/Runtime/Models/AntialiasingModel.cs'
+'Assets/PostProcessing/Runtime/Models/BloomModel.cs'
+'Assets/PostProcessing/Runtime/Models/BuiltinDebugViewsModel.cs'
+'Assets/PostProcessing/Runtime/Models/ChromaticAberrationModel.cs'
+'Assets/PostProcessing/Runtime/Models/ColorGradingModel.cs'
+'Assets/PostProcessing/Runtime/Models/DepthOfFieldModel.cs'
+'Assets/PostProcessing/Runtime/Models/DitheringModel.cs'
+'Assets/PostProcessing/Runtime/Models/EyeAdaptationModel.cs'
+'Assets/PostProcessing/Runtime/Models/FogModel.cs'
+'Assets/PostProcessing/Runtime/Models/GrainModel.cs'
+'Assets/PostProcessing/Runtime/Models/MotionBlurModel.cs'
+'Assets/PostProcessing/Runtime/Models/ScreenSpaceReflectionModel.cs'
+'Assets/PostProcessing/Runtime/Models/UserLutModel.cs'
+'Assets/PostProcessing/Runtime/Models/VignetteModel.cs'
+'Assets/PostProcessing/Runtime/PostProcessingBehaviour.cs'
+'Assets/PostProcessing/Runtime/PostProcessingComponent.cs'
+'Assets/PostProcessing/Runtime/PostProcessingContext.cs'
+'Assets/PostProcessing/Runtime/PostProcessingModel.cs'
+'Assets/PostProcessing/Runtime/PostProcessingProfile.cs'
+'Assets/PostProcessing/Runtime/Utils/ColorGradingCurve.cs'
+'Assets/PostProcessing/Runtime/Utils/GraphicsUtils.cs'
+'Assets/PostProcessing/Runtime/Utils/MaterialFactory.cs'
+'Assets/PostProcessing/Runtime/Utils/RenderTextureFactory.cs'
+'Assets/RunemarkStudio/DarkFantasyKit [Free]/Readme/Parts/Readme.cs'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.Linq.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Mono/lib/mono/unity/UnityScript.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Mono/lib/mono/unity/UnityScript.Lang.dll'
+-r:'/Applications/Unity/Hub/Editor/2017.4.12f1/Unity.app/Contents/Mono/lib/mono/unity/Boo.Lang.dll'
+-sdk:unity
