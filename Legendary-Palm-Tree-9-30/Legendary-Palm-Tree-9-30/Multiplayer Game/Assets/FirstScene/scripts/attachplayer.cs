@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class attachplayer : NetworkBehaviour {
+
+    GameObject player;
     
-    
-    updatecubeposition ucp;
     private void Start()
     {
        
@@ -16,22 +16,27 @@ public class attachplayer : NetworkBehaviour {
         
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.transform.parent = transform;
-            
+            player = other.gameObject;
+            player.transform.parent = transform;
+           
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject==player)
         {
-            
-            other.gameObject.GetComponent<CharacterMovement>().wasattached = true;
+           
+            player.GetComponent<CharacterMovement>().wasattached = true;
             //other.gameObject.GetComponent<CharacterMovement>().zairspeed = this.GetComponent<updatecubeposition>().currentspeed.z;
             //other.gameObject.GetComponent<CharacterMovement>().xairspeed = this.GetComponent<updatecubeposition>().currentspeed.x;
             //other.gameObject.GetComponent<CharacterMovement>().yairspeed = this.GetComponent<updatecubeposition>().currentspeed.y;
-            other.gameObject.transform.parent = null;
-
+            player.transform.parent = null;
+            
 
         }
+    }
+    private void Update()
+    {
+        
     }
 }

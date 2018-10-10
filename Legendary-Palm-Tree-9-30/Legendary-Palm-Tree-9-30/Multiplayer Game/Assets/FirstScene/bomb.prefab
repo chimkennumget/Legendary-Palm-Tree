@@ -314,9 +314,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   psholder: {fileID: 1175411061229754, guid: 7227f9848cc5a754aa259d137b203259, type: 2}
   bomb: {fileID: 1441733778982632}
-  power: 40
-  radius: 7
-  upforce: 10
+  power: 50
+  radius: 5
+  upforce: 20
   countdown: 0
   starttimer: 0
 --- !u!135 &135604081145148704

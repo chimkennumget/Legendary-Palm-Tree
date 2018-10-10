@@ -13,6 +13,7 @@ public class explodebomb : NetworkBehaviour {
     public float radius=10;
     public float upforce=10;
     public float countdown=0;
+    public bool delayexplode=false;
     public bool starttimer=false;
     bool destroytimer = false;
     bool hitsomething = false;
@@ -36,12 +37,27 @@ public class explodebomb : NetworkBehaviour {
         
         if (starttimer)
         {
-        
-            Debug.Log("greater than 3");
-            Rpcexplode();
-            starttimer = false;
-            Debug.Log("starttimer");
-            countdown = 0;
+            if (delayexplode)
+            {
+                
+                countdown += Time.deltaTime;
+                
+                if (countdown > 3)
+                {
+                    countdown = 0;
+                    Rpcexplode();
+                    delayexplode = false;
+                    starttimer = false;
+                }
+            }
+            else
+            {
+                Rpcexplode();
+                starttimer = false;
+                countdown = 0;
+            }
+            
+            
 
         }
         if (destroytimer)
@@ -90,8 +106,12 @@ void Rpcexplode()
         Collider[] colliders = Physics.OverlapSphere(bombposition, radius);
         foreach(Collider hit in colliders)
         {
+            if (hit.GetComponent<sphereswitch>())
+            {
+                hit.GetComponent<sphereswitch>().changecolor = true;
+            }
             Rigidbody rb = hit.GetComponent<Rigidbody>();
-            if(rb!= null)
+            if (rb != null && hit.CompareTag("Player") == false)
             {
                 rb.AddExplosionForce(power, bombposition, radius, upforce, ForceMode.Impulse);
                 

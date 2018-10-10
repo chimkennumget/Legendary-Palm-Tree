@@ -249,6 +249,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\disappear.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
@@ -371,6 +372,7 @@
     <Compile Include="Assets\emotitron\Utilities\UniqueNamesList.cs" />
     <Compile Include="Assets\fallthenreset.cs" />
     <Compile Include="Assets\FirstScene\scripts\attachplayer.cs" />
+    <Compile Include="Assets\FirstScene\scripts\attachwithrotation.cs" />
     <Compile Include="Assets\FirstScene\scripts\CharacterMovement.cs" />
     <Compile Include="Assets\FirstScene\scripts\explodebomb.cs" />
     <Compile Include="Assets\FirstScene\scripts\facecamera.cs" />
@@ -381,6 +383,7 @@
     <Compile Include="Assets\FirstScene\scripts\relativegravitycontrol.cs" />
     <Compile Include="Assets\FirstScene\scripts\setuplocalplayer.cs" />
     <Compile Include="Assets\FirstScene\scripts\updatecubeposition.cs" />
+    <Compile Include="Assets\hidechild.cs" />
     <Compile Include="Assets\Lobby\Scripts\DraggablePanel.cs" />
     <Compile Include="Assets\Lobby\Scripts\EventSystemChecker.cs" />
     <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyCountdownPanel.cs" />
@@ -438,6 +441,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\pushoff.cs" />
+    <Compile Include="Assets\sphereswitch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />

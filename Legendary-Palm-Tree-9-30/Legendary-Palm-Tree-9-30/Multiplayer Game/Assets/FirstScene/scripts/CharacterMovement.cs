@@ -32,7 +32,19 @@ public class CharacterMovement : NetworkBehaviour
             NetworkServer.Spawn(clone);
         
     }
-    
+    [Command]
+    void Cmdthrowdelaybomb()
+    {
+
+        GameObject clone = Instantiate(bomb, bombspawn.transform.position, transform.localRotation) as GameObject; //the clone variable holds our instantiate action
+        clone.GetComponent<Rigidbody>().isKinematic = false;
+        clone.GetComponent<explodebomb>().delayexplode = true;
+        Rigidbody clonerb = clone.GetComponent<Rigidbody>();
+        
+        NetworkServer.Spawn(clone);
+
+    }
+
     void Start()
     {
         
@@ -54,7 +66,7 @@ public class CharacterMovement : NetworkBehaviour
     public float jumpforce =250;
     public void charjump()
     {
-        
+       
             gameObject.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, jumpforce, 0));
             airspeed = z;
             wasmoving = true;
@@ -78,7 +90,7 @@ public class CharacterMovement : NetworkBehaviour
     {
         if (collision.gameObject)
         {
-            Debug.Log("in the air");
+
             boxiscolliding = false;
         }
     }
@@ -94,6 +106,10 @@ public class CharacterMovement : NetworkBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Cmdthrowbomb();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Cmdthrowdelaybomb();
         }
 
             if (gameObject.transform.position.y <= -20)
