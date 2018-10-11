@@ -78,6 +78,7 @@ public class fallthenreset : MonoBehaviour {
             falldelay += Time.deltaTime;
             if (falldelay > .5f)
             {
+                this.transform.DetachChildren();
                 this.GetComponent<Rigidbody>().isKinematic = false;
                 falltimestart = false;
                 falldelay = 0;
