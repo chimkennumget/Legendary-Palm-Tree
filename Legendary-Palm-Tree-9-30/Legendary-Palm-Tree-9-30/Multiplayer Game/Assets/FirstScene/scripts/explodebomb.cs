@@ -28,6 +28,7 @@ public class explodebomb : NetworkBehaviour {
     [ClientRpc]
     void Rpcexplosioneffect()
     {
+        
         explosion = Instantiate(psholder, bomb.transform.position, bomb.transform.rotation) as GameObject;
     }
 
@@ -62,11 +63,11 @@ public class explodebomb : NetworkBehaviour {
         }
         if (destroytimer)
         {
-            Debug.Log("destroytimer is on");
+
             countdown += Time.deltaTime;
             if (countdown > 2)
             {
-                Debug.Log("goodbye");
+                
                 destroytimer = false;
                 countdown = 0;
                 Rpcgoodbye();
@@ -94,9 +95,21 @@ public class explodebomb : NetworkBehaviour {
 
 
     }
-    
-
-[ClientRpc]
+    //
+    float dist;
+    void CalculateExplosionValue(Vector3 aSource, Vector3 aTarget, float aRange)
+    {
+        dist = (aTarget - aSource).magnitude;
+        if (dist > aRange)
+        {
+            dist = 0;
+        }
+        else {
+            dist = 1.0f - dist / aRange;
+        }
+    }
+    int damage;
+    [ClientRpc]
 void Rpcexplode()
     {
         Vector3 bombposition = bomb.transform.position;
@@ -106,12 +119,31 @@ void Rpcexplode()
         Collider[] colliders = Physics.OverlapSphere(bombposition, radius);
         foreach(Collider hit in colliders)
         {
+            Rigidbody rb = hit.GetComponent<Rigidbody>();
+            Health health = hit.GetComponent<Health>();
             if (hit.GetComponent<sphereswitch>())
             {
                 hit.GetComponent<sphereswitch>().changecolor = true;
             }
-            Rigidbody rb = hit.GetComponent<Rigidbody>();
-            if (rb != null && hit.CompareTag("Player") == false)
+            
+            if (health)
+            {
+                
+                CalculateExplosionValue(bombposition, hit.transform.position, radius);
+                if (dist == 0)
+                {
+                    damage = 0;
+                }
+                else
+                {
+                    damage = (int)(power * 3 / (4 * 3.14 * dist * dist * dist));//calculation on unity answers for how add explosive force force is applied as distance increases https://answers.unity.com/questions/283146/how-to-calculate-force-from-explosion-on-a-rigidbo.html
+                }
+                    Debug.Log(damage);
+                health.TakeDamage(damage);
+                rb.AddExplosionForce(power/10, bombposition, radius, upforce*0, ForceMode.Impulse);
+            }
+            
+            if (rb != null && hit.CompareTag("Player")==false)
             {
                 rb.AddExplosionForce(power, bombposition, radius, upforce, ForceMode.Impulse);
                 

@@ -249,6 +249,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Dan&apos;s Stuff\_Scripts\camMouseLook.cs" />
+    <Compile Include="Assets\Dan&apos;s Stuff\_Scripts\characterController.cs" />
+    <Compile Include="Assets\Dan&apos;s Stuff\_Scripts\CoinScript.cs" />
+    <Compile Include="Assets\Dan&apos;s Stuff\_Scripts\CoinSpawn.cs" />
     <Compile Include="Assets\disappear.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
@@ -370,6 +374,7 @@
     <Compile Include="Assets\emotitron\Utilities\SmartVars\SmartVars.cs" />
     <Compile Include="Assets\emotitron\Utilities\StringTools.cs" />
     <Compile Include="Assets\emotitron\Utilities\UniqueNamesList.cs" />
+    <Compile Include="Assets\escape.cs" />
     <Compile Include="Assets\fallthenreset.cs" />
     <Compile Include="Assets\FirstScene\scripts\attachplayer.cs" />
     <Compile Include="Assets\FirstScene\scripts\attachwithrotation.cs" />
@@ -378,6 +383,7 @@
     <Compile Include="Assets\FirstScene\scripts\facecamera.cs" />
     <Compile Include="Assets\FirstScene\scripts\FPSCameraController.cs" />
     <Compile Include="Assets\FirstScene\scripts\grabrigidbodies.cs" />
+    <Compile Include="Assets\FirstScene\scripts\Health.cs" />
     <Compile Include="Assets\FirstScene\scripts\playergravitycontrol.cs" />
     <Compile Include="Assets\FirstScene\scripts\rainbowtext.cs" />
     <Compile Include="Assets\FirstScene\scripts\relativegravitycontrol.cs" />

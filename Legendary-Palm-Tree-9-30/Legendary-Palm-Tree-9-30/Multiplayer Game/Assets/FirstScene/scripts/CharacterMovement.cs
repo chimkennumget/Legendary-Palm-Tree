@@ -15,7 +15,7 @@ public class CharacterMovement : NetworkBehaviour
     GameObject boxxy;
     public bool boxiscolliding;
     public GameObject player;
-    Vector3 startingpoint;
+    public Vector3 startingpoint;
     attachplayer ap;
     Rigidbody rb;
     
