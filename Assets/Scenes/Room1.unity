@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 56170873}
   - component: {fileID: 56170872}
   - component: {fileID: 56170871}
+  - component: {fileID: 56170875}
   m_Layer: 0
   m_Name: Room1Crate3 (3)
   m_TagString: Untagged
@@ -243,6 +244,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &56170875
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 56170870}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &62063556 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: ecd24e9dde1549a44a3782bbec27d009, type: 3}
@@ -660,6 +676,7 @@ GameObject:
   - component: {fileID: 358353517}
   - component: {fileID: 358353516}
   - component: {fileID: 358353515}
+  - component: {fileID: 358353519}
   m_Layer: 0
   m_Name: Room1Crate4
   m_TagString: Untagged
@@ -733,6 +750,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &358353519
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358353514}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &422395235
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +776,7 @@ GameObject:
   - component: {fileID: 422395238}
   - component: {fileID: 422395237}
   - component: {fileID: 422395236}
+  - component: {fileID: 422395240}
   m_Layer: 0
   m_Name: Room1Crate5 (2)
   m_TagString: Untagged
@@ -817,6 +850,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &422395240
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 422395235}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &422805747
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,6 +960,7 @@ GameObject:
   - component: {fileID: 460054506}
   - component: {fileID: 460054505}
   - component: {fileID: 460054504}
+  - component: {fileID: 460054508}
   m_Layer: 0
   m_Name: Room1Crate3
   m_TagString: Untagged
@@ -985,6 +1034,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &460054508
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 460054503}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &526059118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1112,7 @@ Transform:
   m_LocalScale: {x: 0.3405432, y: 0.3405432, z: 0.3405432}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &534131412
 GameObject:
@@ -1415,6 +1479,7 @@ GameObject:
   - component: {fileID: 662837514}
   - component: {fileID: 662837513}
   - component: {fileID: 662837512}
+  - component: {fileID: 662837516}
   m_Layer: 0
   m_Name: Room1Crate4 (2)
   m_TagString: Untagged
@@ -1488,6 +1553,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &662837516
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 662837511}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &671644700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,6 +1663,7 @@ GameObject:
   - component: {fileID: 745803406}
   - component: {fileID: 745803405}
   - component: {fileID: 745803404}
+  - component: {fileID: 745803408}
   m_Layer: 0
   m_Name: Room1Crate3 (2)
   m_TagString: Untagged
@@ -1656,6 +1737,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &745803408
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 745803403}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &777564796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,6 +1848,7 @@ GameObject:
   - component: {fileID: 780798761}
   - component: {fileID: 780798760}
   - component: {fileID: 780798759}
+  - component: {fileID: 780798763}
   m_Layer: 0
   m_Name: Room1Crate5 (1)
   m_TagString: Untagged
@@ -1825,6 +1922,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &780798763
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 780798758}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &792761632
 Prefab:
   m_ObjectHideFlags: 0
@@ -2022,6 +2134,7 @@ GameObject:
   - component: {fileID: 833726373}
   - component: {fileID: 833726372}
   - component: {fileID: 833726371}
+  - component: {fileID: 833726375}
   m_Layer: 0
   m_Name: Room1Crate5
   m_TagString: Untagged
@@ -2095,6 +2208,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &833726375
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 833726370}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &842466102
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,6 +2318,7 @@ GameObject:
   - component: {fileID: 882079901}
   - component: {fileID: 882079900}
   - component: {fileID: 882079899}
+  - component: {fileID: 882079903}
   m_Layer: 0
   m_Name: Room1Crate1
   m_TagString: Untagged
@@ -2263,6 +2392,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &882079903
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 882079898}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &882190124
 Prefab:
   m_ObjectHideFlags: 0
@@ -2407,15 +2551,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4598726909797954, guid: c3646225113109444be87e823de7be45, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -19.08
+      value: -19.94
       objectReference: {fileID: 0}
     - target: {fileID: 4598726909797954, guid: c3646225113109444be87e823de7be45, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.88
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4598726909797954, guid: c3646225113109444be87e823de7be45, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -19.36
+      value: -19.6
       objectReference: {fileID: 0}
     - target: {fileID: 4598726909797954, guid: c3646225113109444be87e823de7be45, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2435,7 +2579,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4598726909797954, guid: c3646225113109444be87e823de7be45, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1778616614658404, guid: c3646225113109444be87e823de7be45, type: 2}
       propertyPath: m_Name
@@ -3004,6 +3148,7 @@ GameObject:
   - component: {fileID: 1179087245}
   - component: {fileID: 1179087244}
   - component: {fileID: 1179087243}
+  - component: {fileID: 1179087247}
   m_Layer: 0
   m_Name: Room1Crate4 (1)
   m_TagString: Untagged
@@ -3071,12 +3216,27 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1179087242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.090004, y: -14.480004, z: -1.54}
+  m_LocalPosition: {x: 3.13, y: -14.480004, z: -1.54}
   m_LocalScale: {x: 1.1274698, y: 0.8820992, z: 0.8820992}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1179087247
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1179087242}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1185082141 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100006, guid: 78d3c3494e3b1ca428d7156a701bdef3, type: 3}
@@ -3104,6 +3264,7 @@ GameObject:
   - component: {fileID: 1186357010}
   - component: {fileID: 1186357009}
   - component: {fileID: 1186357008}
+  - component: {fileID: 1186357012}
   m_Layer: 0
   m_Name: Room1Crate3 (6)
   m_TagString: Untagged
@@ -3177,6 +3338,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1186357012
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1186357007}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1243220823
 Prefab:
   m_ObjectHideFlags: 0
@@ -3234,6 +3410,7 @@ GameObject:
   - component: {fileID: 1246445474}
   - component: {fileID: 1246445473}
   - component: {fileID: 1246445472}
+  - component: {fileID: 1246445476}
   m_Layer: 0
   m_Name: Room1Crate3 (1)
   m_TagString: Untagged
@@ -3307,6 +3484,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1246445476
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246445471}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1250613616
 Prefab:
   m_ObjectHideFlags: 0
@@ -3926,6 +4118,7 @@ GameObject:
   - component: {fileID: 1512004596}
   - component: {fileID: 1512004595}
   - component: {fileID: 1512004594}
+  - component: {fileID: 1512004598}
   m_Layer: 0
   m_Name: Room1Crate1 (2)
   m_TagString: Untagged
@@ -3999,6 +4192,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1512004598
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1512004593}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1538206931
 Prefab:
   m_ObjectHideFlags: 0
@@ -4056,6 +4264,7 @@ GameObject:
   - component: {fileID: 1539276817}
   - component: {fileID: 1539276816}
   - component: {fileID: 1539276815}
+  - component: {fileID: 1539276819}
   m_Layer: 0
   m_Name: Room1Crate3 (4)
   m_TagString: Untagged
@@ -4129,6 +4338,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1539276819
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1539276814}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1597496977
 Prefab:
   m_ObjectHideFlags: 0
@@ -4166,7 +4390,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4102351367616866, guid: 5f1145911995c514fb632441117fe606, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f1145911995c514fb632441117fe606, type: 2}
@@ -4268,6 +4492,7 @@ GameObject:
   - component: {fileID: 1626456143}
   - component: {fileID: 1626456142}
   - component: {fileID: 1626456141}
+  - component: {fileID: 1626456145}
   m_Layer: 0
   m_Name: Room1Crate1 (3)
   m_TagString: Untagged
@@ -4341,6 +4566,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1626456145
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1626456140}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1634306553
 GameObject:
   m_ObjectHideFlags: 0
@@ -4746,6 +4986,7 @@ GameObject:
   - component: {fileID: 1781216759}
   - component: {fileID: 1781216758}
   - component: {fileID: 1781216757}
+  - component: {fileID: 1781216761}
   m_Layer: 0
   m_Name: Room1Crate2 (1)
   m_TagString: Untagged
@@ -4819,6 +5060,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1781216761
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1781216756}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1832056857
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,6 +5316,7 @@ GameObject:
   - component: {fileID: 1968255771}
   - component: {fileID: 1968255770}
   - component: {fileID: 1968255769}
+  - component: {fileID: 1968255773}
   m_Layer: 0
   m_Name: Room1Crate2
   m_TagString: Untagged
@@ -5133,6 +5390,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1968255773
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1968255768}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1972135240
 GameObject:
   m_ObjectHideFlags: 0
