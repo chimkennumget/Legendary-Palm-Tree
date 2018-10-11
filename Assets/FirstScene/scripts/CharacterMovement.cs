@@ -17,6 +17,7 @@ public class CharacterMovement : MonoBehaviour
     Vector3 startingpoint;
     attachplayer ap;
     Rigidbody rb;
+	public int points = 0;
     
     bool threw;
     void throwbomb()
@@ -54,6 +55,7 @@ public class CharacterMovement : MonoBehaviour
     public float zairspeed=0;
     public float jumpforce =350;
     public void charjump()
+
     {
         
             gameObject.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, jumpforce, 0));
@@ -63,6 +65,26 @@ public class CharacterMovement : MonoBehaviour
         anim.SetBool("jumping", true);
         
     }
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.CompareTag ("Coin")) 
+		{
+			points += 1;
+			other.gameObject.SetActive (false);
+		}	
+
+	}
+
+	private void OnGUI()
+	{
+		GUI.Label(new Rect(10, 10, 100, 20), "Score : " + points);
+
+		if (points >= 30)
+		{
+			GUI.Label(new Rect(100, 100, 100, 20), "YOU WIN");
+		}
+	}
     
     private void OnCollisionStay(Collision collision)
     {
