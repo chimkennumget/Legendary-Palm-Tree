@@ -22,6 +22,7 @@ c80903ac91f623a8ac2ab9353910d1eb Assembly-CSharp.dll:emotitron.Utilities.Pooling
 e89bc6d7e01cae453fe35e1473f8921c Assembly-CSharp.dll:emotitron.NST.NSTMapBounds
 a32936c67fbf1d12be548b103611e586 Assembly-CSharp.dll:emotitron.NST.DebuggingSettings
 f0ee12664e781156c1c49389b0c6e55a Assembly-CSharp.dll:.FPSCameraController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.escape
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Prototype.NetworkLobby.EventSystemChecker
 0593d642395a182d5834f97aaec6e2e5 Assembly-CSharp.dll:.hidechild
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
@@ -59,7 +60,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 72372a6732732299b6dd9f3032fde16b Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyInfoPanel
 53f9bb48df3fd491209bc93a631b7e20 Assembly-CSharp.dll:.Mover
 0bf54b3a720242bd09f891f02d6c8796 Assembly-CSharp.dll:.Rotator
-fff60a812eb1406e006b39aff7dafcf7 Assembly-CSharp.dll:.Health
+d99eed713a21c9cc569345311a547840 Assembly-CSharp.dll:.Health
 fc205d3e53430285647e14ee8b87ccf3 Assembly-CSharp.dll:emotitron.NST.NSTHitGroupAssign
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -129,6 +130,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+73ce6e49d91b8290093c249ffa770aee Assembly-CSharp.dll:.team
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 530ba9b72c083557f216de15a42fce0b Assembly-CSharp.dll:emotitron.NST.NetLibrarySettings
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DebugText
@@ -137,7 +139,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:emotitron.NST.NSTSettings
-3b3849520a4d6e31fe368a64b0ba9534 Assembly-CSharp.dll:.explodebomb
+1317ed8062c74552829b6e64b963642c Assembly-CSharp.dll:.explodebomb
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
@@ -151,7 +153,7 @@ dd4c8636b447d2c3fc9e7944d76bea31 Assembly-CSharp.dll:.characterController
 b7536247a550bc1596505b7f345c8adf Assembly-CSharp.dll:.GunAim
 dce9fda88970731078045bea94e929fe Assembly-CSharp.dll:emotitron.NST.Sample.NSTSampleHealth
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:emotitron.NST.MasterNetAdapter
-09faae05055458f0eb585a173764012b Assembly-CSharp.dll:.setuplocalplayer
+b8a5e1d0af7c18ae83d25d5db812e08d Assembly-CSharp.dll:.setuplocalplayer
 c99104cca6f33db39d236f8efb9aafb4 Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyCountdownPanel
 cc66449790f4f9da985581b88f335b89 Assembly-CSharp.dll:emotitron.NST.HitGroupSettings
 0b93570821a43d8031cdbf3fd30a0e11 Assembly-CSharp.dll:emotitron.NST.NSTSamplePlayerSpawn
@@ -221,4 +223,4 @@ f671a42aea5f34fec6a4450a3668c615 Assembly-CSharp.dll:UnityEngine.PostProcessing.
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:emotitron.NST.NSTMaster
 239d2cc8d353bbfcbefc27fa8f0221cc Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyServerList
 e0a17fc5d0327a99c39aa282ce6b43fe Assembly-CSharp.dll:emotitron.NST.HeaderSettings
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.escape
+47e5e47e9b48351f8ae997976f42c9b5 Assembly-CSharp.dll:.GUITeam

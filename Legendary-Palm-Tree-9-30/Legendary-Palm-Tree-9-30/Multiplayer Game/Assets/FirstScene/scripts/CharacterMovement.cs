@@ -7,6 +7,7 @@ using System.Collections;
 
 public class CharacterMovement : NetworkBehaviour
 {
+    
     public GameObject bombspawn;
     GameObject clone;
     public GameObject bomb;
@@ -18,19 +19,68 @@ public class CharacterMovement : NetworkBehaviour
     public Vector3 startingpoint;
     attachplayer ap;
     Rigidbody rb;
-    
+   
+    //[SyncVar(hook ="serversetblueteam")]
+    //public bool blueteam=false;
+
+    //[SyncVar(hook = "serversetredteam")]
+   // public bool redteam=false;
     bool threw;
+    //void serversetredteam(bool rt)
+    //{
+    //    if (rt)
+    //    {
+    //        this.redteam = true;
+    //    }
+    //    else
+    //    {
+    //        this.redteam = false;
+    //    }
+    //}
+    //void serversetblueteam(bool bt)
+    //{
+    //    if (bt)
+    //    {
+    //        this.blueteam = true;
+    //    }
+    //    else
+    //    {
+    //        this.blueteam = false;
+    //    }
+    //}
     
+   
     [Command]
     void Cmdthrowbomb()
     {
-        
-            GameObject clone = Instantiate(bomb,bombspawn.transform.position, transform.localRotation) as GameObject; //the clone variable holds our instantiate action
-            clone.GetComponent<Rigidbody>().isKinematic = false;
-            Rigidbody clonerb = clone.GetComponent<Rigidbody>();
-            clonerb.AddRelativeForce(Vector3.forward * 800);
-            NetworkServer.Spawn(clone);
-        
+        //Rpcthrowbomb();
+        GameObject clone = Instantiate(bomb, bombspawn.transform.position, transform.localRotation) as GameObject; //the clone variable holds our instantiate action
+        clone.GetComponent<Rigidbody>().isKinematic = false;
+
+        clone.GetComponent<explodebomb>().throwerid = this.GetComponent<team>().TeamID;
+
+
+        Rigidbody clonerb = clone.GetComponent<Rigidbody>();
+        clonerb.AddRelativeForce(Vector3.forward * 800);
+        NetworkServer.Spawn(clone);
+        Debug.Log("spawned it");
+
+    }
+    [ClientRpc]
+    void Rpcthrowbomb()
+    {
+
+        GameObject clone = Instantiate(bomb, bombspawn.transform.position, transform.localRotation) as GameObject; //the clone variable holds our instantiate action
+        clone.GetComponent<Rigidbody>().isKinematic = false;
+
+        clone.GetComponent<explodebomb>().throwerid = this.GetComponent<team>().TeamID;
+
+
+        Rigidbody clonerb = clone.GetComponent<Rigidbody>();
+        clonerb.AddRelativeForce(Vector3.forward * 800);
+        NetworkServer.Spawn(clone);
+        Debug.Log("spawned it");
+
     }
     [Command]
     void Cmdthrowdelaybomb()
@@ -38,16 +88,19 @@ public class CharacterMovement : NetworkBehaviour
 
         GameObject clone = Instantiate(bomb, bombspawn.transform.position, transform.localRotation) as GameObject; //the clone variable holds our instantiate action
         clone.GetComponent<Rigidbody>().isKinematic = false;
+        clone.GetComponent<explodebomb>().throwerid = this.GetComponent<team>().TeamID;//consider getinstanceID for testing different teams
+        Debug.Log(clone.GetComponent<explodebomb>().throwerid);
         clone.GetComponent<explodebomb>().delayexplode = true;
         Rigidbody clonerb = clone.GetComponent<Rigidbody>();
         
         NetworkServer.Spawn(clone);
+        Debug.Log("spawned it");
 
     }
-
-    void Start()
+    public override void OnStartLocalPlayer()
+    
     {
-        
+        player = this.gameObject;
         startingpoint = gameObject.transform.position;
         anim = this.GetComponent<Animator>();
         boxxy = GameObject.Find("Cube");

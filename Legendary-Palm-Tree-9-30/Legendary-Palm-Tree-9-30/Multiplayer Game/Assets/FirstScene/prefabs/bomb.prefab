@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 3
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -320,6 +320,7 @@ MonoBehaviour:
   countdown: 0
   delayexplode: 0
   starttimer: 0
+  throwerid: 0
 --- !u!135 &135604081145148704
 SphereCollider:
   m_ObjectHideFlags: 1

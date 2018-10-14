@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 
 public class setuplocalplayer : NetworkBehaviour {
     public Camera fpscamera;
+    public AudioListener al;
     [SyncVar]
     public string pname = "player";
 
@@ -35,7 +36,10 @@ public class setuplocalplayer : NetworkBehaviour {
             
             
             fpscamera = Camera.main;
-
+            GetComponent<GUITeam>().enabled = true;
+            al.enabled = true;
+            GetComponent<Health>().enabled = true;
+            GetComponent<team>().enabled = true;
             GetComponent<CharacterMovement>().enabled = true;
             //Camera.main.transform.position = this.transform.position -
             //    this.transform.forward * 4 + this.transform.up * 3;
@@ -45,6 +49,9 @@ public class setuplocalplayer : NetworkBehaviour {
         else
         {
             fpscamera.enabled = false;
+            GetComponent<team>().enabled = false;
+            GetComponent<Health>().enabled = false;
+            GetComponent<CharacterMovement>().enabled = false;
         }
 	}
 	

@@ -383,6 +383,7 @@
     <Compile Include="Assets\FirstScene\scripts\facecamera.cs" />
     <Compile Include="Assets\FirstScene\scripts\FPSCameraController.cs" />
     <Compile Include="Assets\FirstScene\scripts\grabrigidbodies.cs" />
+    <Compile Include="Assets\FirstScene\scripts\GUITeam.cs" />
     <Compile Include="Assets\FirstScene\scripts\Health.cs" />
     <Compile Include="Assets\FirstScene\scripts\playergravitycontrol.cs" />
     <Compile Include="Assets\FirstScene\scripts\rainbowtext.cs" />
@@ -448,6 +449,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\pushoff.cs" />
     <Compile Include="Assets\sphereswitch.cs" />
+    <Compile Include="Assets\team.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />

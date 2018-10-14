@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class explodebomb : NetworkBehaviour {
+    
+    
     GameObject explosion;
     ParticleSystem parts;
     CharacterMovement cm;
@@ -19,12 +21,10 @@ public class explodebomb : NetworkBehaviour {
     bool hitsomething = false;
     float duration;
     float certaindeath = 0;
+    public int throwerid;
     
 	// Use this for initialization
-	void Start () {
-        
-        //this.GetComponent<Rigidbody>().isKinematic = true;
-    }
+	
     [ClientRpc]
     void Rpcexplosioneffect()
     {
@@ -33,34 +33,46 @@ public class explodebomb : NetworkBehaviour {
     }
 
     // Update is called once per frame
-    void LateUpdate () {
+    void Update () {
+
         
-        
-        if (starttimer)
-        {
-            if (delayexplode)
+            if (starttimer)
             {
-                
-                countdown += Time.deltaTime;
-                
-                if (countdown > 3)
+                if (delayexplode)
                 {
-                    countdown = 0;
-                    Rpcexplode();
+
+                    countdown += Time.deltaTime;
+
+                    if (countdown > 3)
+                    {
+                        countdown = 0;
+                    if (hasAuthority)
+                    {
+                        Debug.Log("we have authority");
+                        explode();
+                    }
+                    
                     delayexplode = false;
-                    starttimer = false;
+                        starttimer = false;
+                    }
                 }
-            }
-            else
-            {
-                Rpcexplode();
-                starttimer = false;
-                countdown = 0;
+                else
+                {
+                if (hasAuthority)
+                {
+                    Debug.Log("we have authority");
+                    explode();
+                }
+                
+                
+                    starttimer = false;
+                    countdown = 0;
+                }
             }
             
             
 
-        }
+        
         if (destroytimer)
         {
 
@@ -70,28 +82,26 @@ public class explodebomb : NetworkBehaviour {
                 
                 destroytimer = false;
                 countdown = 0;
-                Rpcgoodbye();
+                
+                    Rpcgoodbye();
+                
                 
             }
         }
         
         
 	}
-    [ClientRpc]
-    void Rpcdoom()
-    {
-        //Destroy(bomb);
-        //Destroy(explosion);
-    }
+   
+   
     [ClientRpc]
     void Rpcgoodbye()
     {
         
             Debug.Log("destroying");
-        //NetworkIdentity.Destroy(bomb);
+        
             
             Destroy(explosion);
-            Destroy(bomb);
+            NetworkServer.Destroy(bomb);
 
 
     }
@@ -108,9 +118,11 @@ public class explodebomb : NetworkBehaviour {
             dist = 1.0f - dist / aRange;
         }
     }
+    
+    
     int damage;
-    [ClientRpc]
-void Rpcexplode()
+    
+void explode()
     {
         Vector3 bombposition = bomb.transform.position;
 
@@ -121,36 +133,50 @@ void Rpcexplode()
         {
             Rigidbody rb = hit.GetComponent<Rigidbody>();
             Health health = hit.GetComponent<Health>();
+            
+
+            team tm = hit.GetComponent<team>();
+            
             if (hit.GetComponent<sphereswitch>())
             {
                 hit.GetComponent<sphereswitch>().changecolor = true;
             }
+
             
-            if (health)
+            if (tm &&(tm == null || tm.TeamID==0  || throwerid==0 || tm.TeamID != throwerid))
             {
-                
-                CalculateExplosionValue(bombposition, hit.transform.position, radius);
-                if (dist == 0)
-                {
-                    damage = 0;
-                }
-                else
-                {
-                    damage = (int)(power * 3 / (4 * 3.14 * dist * dist * dist));//calculation on unity answers for how add explosive force force is applied as distance increases https://answers.unity.com/questions/283146/how-to-calculate-force-from-explosion-on-a-rigidbo.html
-                }
+                Debug.Log(tm.TeamID);
+                Debug.Log(throwerid);
+                Debug.Log("first stage cleared");
+               
+                  
+                    Debug.Log("it knows we have character movement and we are blueteam");
+                    CalculateExplosionValue(bombposition, hit.transform.position, radius);
+                    if (dist == 0)
+                    {
+                        damage = 0;
+                    }
+                    else
+                    {
+                        damage = (int)(power * 3 / (4 * 3.14 * dist * dist * dist));//calculation on unity answers for how add explosive force force is applied as distance increases https://answers.unity.com/questions/283146/how-to-calculate-force-from-explosion-on-a-rigidbo.html
+                    }
                     Debug.Log(damage);
-                health.TakeDamage(damage);
-                rb.AddExplosionForce(power/10, bombposition, radius, upforce*0, ForceMode.Impulse);
+                    health.TakeDamage(damage);
+                    rb.AddExplosionForce(power / 10, bombposition, radius, upforce * 0, ForceMode.Impulse);
+                
+               
             }
             
+
             if (rb != null && hit.CompareTag("Player")==false)
             {
                 rb.AddExplosionForce(power, bombposition, radius, upforce, ForceMode.Impulse);
                 
             }
         }
-        
-        Rpcexplosioneffect();
+         
+            Rpcexplosioneffect();
+        Debug.Log("explosssiiionn!!!");
         destroytimer = true;
         
     }

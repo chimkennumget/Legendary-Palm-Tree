@@ -6,29 +6,70 @@ using UnityEngine.Networking;
 public class Health : NetworkBehaviour {
     public const int maxHealth = 100;
     public int healthbardoubler = 2;
-    float regentimerwait=0;
-    float regentimer=0;
+    [SyncVar]float regentimerwait=0;
+    [SyncVar]float regentimer=0;
     bool regenerating = false;
+    [SyncVar(hook = "resetwaittimer")]public bool gothit=false;
     [SyncVar(hook = "adjusthealthbar")]public int currentHealth = maxHealth;
     public RectTransform healthbar;
+    
     public void TakeDamage(int amount) 
     {
-        if (!isServer)
+        
+        if (isServer)
         {
-            return;
+
+
+
+            currentHealth -= amount;
+            gothit = true;
+            Debug.Log(gothit + "i got hit, stop regenerating");
+            regentimerwait = 0;
+            if (currentHealth <= 0)
+            {
+                currentHealth = maxHealth;
+                Rpcrespawn();
+            }
         }
-        currentHealth -= amount;
-        if (currentHealth <= 0){
-            currentHealth = maxHealth;
-            Rpcrespawn();
+         else if(!isServer)
+        {
+            Cmdtakedamage(amount);
+            Debug.Log("probably the host got hit");
         }
         
     }
+    [Command]
+    void Cmdtakedamage(int amount)
+    {
+        Rpctakedamage(amount);
+        
+    }
+    [ClientRpc]
+    void Rpctakedamage(int amount)
+    {
+        currentHealth -= amount;
+        gothit = true;
+        Debug.Log(gothit + "i got hit, stop regenerating");
+        regentimerwait = 0;
+        if (currentHealth <= 0)
+        {
+            currentHealth = maxHealth;
+            Rpcrespawn();
+        }
+    }
+    public void resetwaittimer(bool stopregen)
+    {
+        if (stopregen)
+        {
+            regentimerwait = 0;
+        }
+    }
   
+    //[ClientRpc]
     [Command]
     void Cmdregen()
     {
-        if (isLocalPlayer && currentHealth!=maxHealth)
+        if ( currentHealth!=maxHealth)
         {
             if (regentimerwait < 5)
             {
@@ -37,7 +78,7 @@ public class Health : NetworkBehaviour {
             }
             else if (regentimerwait >= 5)
             {
-                Debug.Log("it thinks it is greater");
+                //Debug.Log("it thinks it is greater");
                 regentimerwait = 5;
                 regenerating = true;
             }
@@ -47,20 +88,25 @@ public class Health : NetworkBehaviour {
             }
             if (regentimer >= .1f)
             {
+                Debug.Log(regentimerwait);
                 this.currentHealth += 1;
                 regentimer = 0;
             }
         }
-        else if(isLocalPlayer && currentHealth >= maxHealth)
+        if( currentHealth >= maxHealth || gothit )
         {
+            gothit = false;
             regenerating = false;
             regentimerwait = 0;
 
         }
     }
+    
     void adjusthealthbar(int health)
     {
-        healthbar.sizeDelta = new Vector2(health * healthbardoubler, healthbar.sizeDelta.y);
+        
+            healthbar.sizeDelta = new Vector2(health * healthbardoubler, healthbar.sizeDelta.y);
+        
     }
     [ClientRpc]
     void Rpcrespawn()
@@ -78,7 +124,10 @@ public class Health : NetworkBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (isLocalPlayer)
+        {
+            Cmdregen();
+        }
         
-        Cmdregen();
 	}
 }
