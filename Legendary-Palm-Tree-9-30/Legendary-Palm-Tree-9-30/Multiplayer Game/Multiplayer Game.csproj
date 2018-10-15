@@ -385,6 +385,7 @@
     <Compile Include="Assets\FirstScene\scripts\grabrigidbodies.cs" />
     <Compile Include="Assets\FirstScene\scripts\GUITeam.cs" />
     <Compile Include="Assets\FirstScene\scripts\Health.cs" />
+    <Compile Include="Assets\FirstScene\scripts\MyLobbyPlayer.cs" />
     <Compile Include="Assets\FirstScene\scripts\playergravitycontrol.cs" />
     <Compile Include="Assets\FirstScene\scripts\rainbowtext.cs" />
     <Compile Include="Assets\FirstScene\scripts\relativegravitycontrol.cs" />

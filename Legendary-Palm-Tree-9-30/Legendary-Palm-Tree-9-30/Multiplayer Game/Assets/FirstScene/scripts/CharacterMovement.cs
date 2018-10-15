@@ -57,7 +57,7 @@ public class CharacterMovement : NetworkBehaviour
         GameObject clone = Instantiate(bomb, bombspawn.transform.position, transform.localRotation) as GameObject; //the clone variable holds our instantiate action
         clone.GetComponent<Rigidbody>().isKinematic = false;
 
-        clone.GetComponent<explodebomb>().throwerid = this.GetComponent<team>().TeamID;
+        clone.GetComponent<explodebomb>().throwerid = this.GetComponent<MyLobbyPlayer>().teamid;
 
 
         Rigidbody clonerb = clone.GetComponent<Rigidbody>();
@@ -73,7 +73,7 @@ public class CharacterMovement : NetworkBehaviour
         GameObject clone = Instantiate(bomb, bombspawn.transform.position, transform.localRotation) as GameObject; //the clone variable holds our instantiate action
         clone.GetComponent<Rigidbody>().isKinematic = false;
 
-        clone.GetComponent<explodebomb>().throwerid = this.GetComponent<team>().TeamID;
+        clone.GetComponent<explodebomb>().throwerid = this.GetComponent<MyLobbyPlayer>().teamid;
 
 
         Rigidbody clonerb = clone.GetComponent<Rigidbody>();
@@ -88,7 +88,7 @@ public class CharacterMovement : NetworkBehaviour
 
         GameObject clone = Instantiate(bomb, bombspawn.transform.position, transform.localRotation) as GameObject; //the clone variable holds our instantiate action
         clone.GetComponent<Rigidbody>().isKinematic = false;
-        clone.GetComponent<explodebomb>().throwerid = this.GetComponent<team>().TeamID;//consider getinstanceID for testing different teams
+        clone.GetComponent<explodebomb>().throwerid = this.GetComponent<MyLobbyPlayer>().teamid;//consider getinstanceID for testing different teams
         Debug.Log(clone.GetComponent<explodebomb>().throwerid);
         clone.GetComponent<explodebomb>().delayexplode = true;
         Rigidbody clonerb = clone.GetComponent<Rigidbody>();

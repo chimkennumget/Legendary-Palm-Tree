@@ -114,6 +114,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 92d7a83ea3c7404e484f3b2eed421855 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 92d7a83ea3c7404e484f3b2eed421855 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+47e5e47e9b48351f8ae997976f42c9b5 Assembly-CSharp.dll:.GUITeam
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ParticleCollision
 ebb2b3e8e4eeb43c144107a25bfd8c98 Assembly-CSharp.dll:.Startup
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -223,4 +224,4 @@ f671a42aea5f34fec6a4450a3668c615 Assembly-CSharp.dll:UnityEngine.PostProcessing.
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:emotitron.NST.NSTMaster
 239d2cc8d353bbfcbefc27fa8f0221cc Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyServerList
 e0a17fc5d0327a99c39aa282ce6b43fe Assembly-CSharp.dll:emotitron.NST.HeaderSettings
-47e5e47e9b48351f8ae997976f42c9b5 Assembly-CSharp.dll:.GUITeam
+e86e95fd9d4fd598c472e5bbd436de18 Assembly-CSharp.dll:.MyLobbyPlayer

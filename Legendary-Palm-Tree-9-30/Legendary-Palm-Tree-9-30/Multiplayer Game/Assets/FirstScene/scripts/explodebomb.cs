@@ -135,7 +135,7 @@ void explode()
             Health health = hit.GetComponent<Health>();
             
 
-            team tm = hit.GetComponent<team>();
+            MyLobbyPlayer tm = hit.GetComponent<MyLobbyPlayer>();
             
             if (hit.GetComponent<sphereswitch>())
             {
@@ -143,9 +143,10 @@ void explode()
             }
 
             
-            if (tm &&(tm == null || tm.TeamID==0  || throwerid==0 || tm.TeamID != throwerid))
+            //if (tm &&(tm == null || tm.TeamID==0  || throwerid==0 || tm.TeamID != throwerid))
+            if(tm &&(tm.teamid != throwerid))
             {
-                Debug.Log(tm.TeamID);
+                Debug.Log(tm.teamid);
                 Debug.Log(throwerid);
                 Debug.Log("first stage cleared");
                
