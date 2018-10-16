@@ -64,6 +64,7 @@ namespace Prototype.NetworkLobby
 
             DontDestroyOnLoad(gameObject);
 
+
             SetServerInfo("Offline", "None");
         }
 

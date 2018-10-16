@@ -197,6 +197,7 @@ e98421b886030a16d01e6f415a1c7ca3 Assembly-CSharp.dll:emotitron.InputSystem.UIZon
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
+54a848a58800bac981cb79905d730373 Assembly-CSharp.dll:.MyLobbyPlayer
 9e8935bc7a7ce00d3aae2531b559e968 Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyPlayerList
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.attachplayer
 47d4dbb91b8073a64be47276b7d4f29a Assembly-CSharp.dll:emotitron.NST.PUNSampleLauncher
@@ -224,4 +225,3 @@ f671a42aea5f34fec6a4450a3668c615 Assembly-CSharp.dll:UnityEngine.PostProcessing.
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:emotitron.NST.NSTMaster
 239d2cc8d353bbfcbefc27fa8f0221cc Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyServerList
 e0a17fc5d0327a99c39aa282ce6b43fe Assembly-CSharp.dll:emotitron.NST.HeaderSettings
-e86e95fd9d4fd598c472e5bbd436de18 Assembly-CSharp.dll:.MyLobbyPlayer

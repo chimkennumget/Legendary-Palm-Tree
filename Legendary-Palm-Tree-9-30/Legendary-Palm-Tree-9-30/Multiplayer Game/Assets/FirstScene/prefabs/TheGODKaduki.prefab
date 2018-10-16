@@ -489,7 +489,6 @@ GameObject:
   - component: {fileID: 114612640490526038}
   - component: {fileID: 114789614648449340}
   - component: {fileID: 114415770300201644}
-  - component: {fileID: 114983241646415526}
   - component: {fileID: 114652613348909984}
   - component: {fileID: 54513433328035994}
   - component: {fileID: 114596883007869894}
@@ -836,7 +835,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1806022651252744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 615.9983, y: 446.5998, z: -1217.7135}
+  m_LocalPosition: {x: 620.91034, y: 449.04556, z: -1216.8021}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4849504791306058}
@@ -1845,6 +1844,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLobbyGUI: 1
   teamid: 0
+  t1sp1b: 0
+  t1sp2b: 0
+  t1sp3b: 0
+  t1sp4b: 0
+  t2sp1b: 0
+  t2sp2b: 0
+  t2sp3b: 0
+  t2sp4b: 0
+  t1sp1: {fileID: 1467974110811988, guid: 917f6246d3d455049b6c3556af475fe3, type: 2}
+  t1sp2: {fileID: 1330126039860484, guid: 61e25c69a4bc3a04dad243df8726ad53, type: 2}
+  t1sp3: {fileID: 1388667050528764, guid: 6c7bb1f3b43f44d4a972b0448e63320e, type: 2}
+  t1sp4: {fileID: 1167922469018502, guid: 9e2eb8b3d547e5c4db45392fa123c162, type: 2}
+  t1sp5: {fileID: 1483928988342430, guid: 2aaa832942de39846905d66406095d9a, type: 2}
+  t1sp6: {fileID: 1847606953151274, guid: 4435dc795caea9947bfe6a05103c696a, type: 2}
+  t1sp7: {fileID: 1011152220696548, guid: cc332b648a43eda46ba67af46ca54cc7, type: 2}
+  t1sp8: {fileID: 1554523868798926, guid: d9349e5e8ea283544ac23a7e62e2751b, type: 2}
+  t2sp1: {fileID: 1970973691874590, guid: d0e9f6d5656d7b84d8ebe6279642b8d1, type: 2}
+  t2sp2: {fileID: 1918370870075818, guid: 639f3c2cb9fe15f44881a29428178928, type: 2}
+  t2sp3: {fileID: 1758828678549650, guid: a7e2aee9e6d59284fbaa811847256eb0, type: 2}
+  t2sp4: {fileID: 1011828775035098, guid: 488411027ca3fa9488c9ade818a23382, type: 2}
+  t2sp5: {fileID: 1048534234867028, guid: e98c58274d99aa64b8339de57518d928, type: 2}
+  t2sp6: {fileID: 1553018794062298, guid: 205e5776fb05e864799bf26a5d778232, type: 2}
+  t2sp7: {fileID: 1111850957705128, guid: b595d71230bd9674fb0b5ffea311a387, type: 2}
+  t2sp8: {fileID: 1102913743376892, guid: 38c9e71e2e1de4f43bad55349822e307, type: 2}
   redTeam: {fileID: 114051515663589888}
   blueTeam: {fileID: 114406921628039344}
 --- !u!114 &114789614648449340
@@ -2056,17 +2079,6 @@ MonoBehaviour:
   m_Text: 'team 2
 
 '
---- !u!114 &114983241646415526
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1806022651252744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!124 &124788900584565812
 Behaviour:
   m_ObjectHideFlags: 1

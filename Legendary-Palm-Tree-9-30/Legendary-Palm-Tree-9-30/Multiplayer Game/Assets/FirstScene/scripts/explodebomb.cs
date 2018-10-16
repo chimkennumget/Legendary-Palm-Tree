@@ -22,9 +22,9 @@ public class explodebomb : NetworkBehaviour {
     float duration;
     float certaindeath = 0;
     public int throwerid;
-    
-	// Use this for initialization
-	
+
+    // Use this for initialization
+   
     [ClientRpc]
     void Rpcexplosioneffect()
     {
@@ -183,13 +183,18 @@ void explode()
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (hitsomething == false)
+        if (collision.gameObject.GetComponent<MyLobbyPlayer>() && collision.gameObject.GetComponent<MyLobbyPlayer>().teamid == throwerid)
+        {
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+        }
+        else if (hitsomething == false)
         {
             hitsomething = true;
             starttimer = true;
         }
         
-    
+
+
     }
 
 

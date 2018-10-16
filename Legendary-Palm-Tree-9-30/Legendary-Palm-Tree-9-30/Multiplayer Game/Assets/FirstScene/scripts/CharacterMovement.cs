@@ -58,7 +58,7 @@ public class CharacterMovement : NetworkBehaviour
         clone.GetComponent<Rigidbody>().isKinematic = false;
 
         clone.GetComponent<explodebomb>().throwerid = this.GetComponent<MyLobbyPlayer>().teamid;
-
+        Physics.IgnoreCollision(clone.GetComponent<Collider>(), GetComponent<Collider>());
 
         Rigidbody clonerb = clone.GetComponent<Rigidbody>();
         clonerb.AddRelativeForce(Vector3.forward * 800);
@@ -130,6 +130,10 @@ public class CharacterMovement : NetworkBehaviour
     
     private void OnCollisionStay(Collision collision)
     {
+        if(collision.gameObject.CompareTag("bomb"))
+        {
+            return;
+        }
         if (collision.gameObject)
         {
             objattachedto = collision.gameObject;
@@ -157,6 +161,12 @@ public class CharacterMovement : NetworkBehaviour
 
 
         if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Cmdthrowbomb();
+        }
+        //fun cheat to break game with :p
+        if (Input.GetKey(KeyCode.Alpha1) && Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.Alpha3) && Input.GetKey(KeyCode.Alpha7) && Input.GetKey(KeyCode.Alpha8)
+            && Input.GetKey(KeyCode.Alpha0))
         {
             Cmdthrowbomb();
         }

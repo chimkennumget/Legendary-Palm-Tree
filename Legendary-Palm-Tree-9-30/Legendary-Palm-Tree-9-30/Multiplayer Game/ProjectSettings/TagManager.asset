@@ -8,6 +8,7 @@ TagManager:
   - normalize
   - red
   - blue
+  - bomb
   layers:
   - Default
   - TransparentFX
