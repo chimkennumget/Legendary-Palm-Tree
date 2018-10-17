@@ -9,10 +9,12 @@ using UnityEngine.Networking.Match;
 
 public class MyLobbyPlayer : NetworkLobbyPlayer
 {
+    public GameObject puiholder;
     // Team
     [SyncVar]
     public int teamid;
-    bool still_looking;
+    
+    public bool stillchoosing=true;
     [SyncVar]
     public bool t1sp1b;
     [SyncVar]
@@ -80,6 +82,32 @@ public class MyLobbyPlayer : NetworkLobbyPlayer
 
 
     }
+    void restartinggame()
+    {
+        
+        {
+            GetComponent<MyLobbyPlayer>().teamid = 0;
+            GetComponent<MyLobbyPlayer>().blueTeam.gameObject.SetActive(false);
+            GetComponent<MyLobbyPlayer>().blueTeam.gameObject.SetActive(false);
+
+
+            GetComponent<MyLobbyPlayer>().blueTeam.gameObject.SetActive(true);
+            GetComponent<MyLobbyPlayer>().blueTeam.onClick.RemoveAllListeners();
+            GetComponent<MyLobbyPlayer>().redTeam.gameObject.SetActive(true);
+            GetComponent<MyLobbyPlayer>().redTeam.onClick.RemoveAllListeners();
+
+
+
+
+
+            // Add listeners
+            //redTeam.onClick.RemoveAllListeners();
+            GetComponent<MyLobbyPlayer>().redTeam.onClick.AddListener(GetComponent<MyLobbyPlayer>().OnClickT1);
+
+            // blueTeam.onClick.RemoveAllListeners();
+            GetComponent<MyLobbyPlayer>().blueTeam.onClick.AddListener(GetComponent<MyLobbyPlayer>().OnClickT2);
+        }
+    }
     public override void OnStartClient()
     {
         base.OnStartClient();
@@ -127,31 +155,31 @@ public class MyLobbyPlayer : NetworkLobbyPlayer
     public void OnClickT1()
     {
 
-        int i = Random.Range(0, t2spawns.Length);
+        int i = Random.Range(0, t1spawns.Length);
         NetworkIdentity[] netobjects = new NetworkIdentity[100];
 
         netobjects = GameObject.FindObjectsOfType<NetworkIdentity>();
+        
         for (int z = 0; z < netobjects.Length; z++)
         {
             if (netobjects[z].gameObject.transform.position == t1spawns[i].transform.position)
             {
                 OnClickT1();
+                return;
             }
         }
         this.GetComponent<CharacterMovement>().startingpoint = t1spawns[i].transform.position;
 
         this.transform.position = this.GetComponent<CharacterMovement>().startingpoint;
-
+        
 
         // Clicked red team (team nr 0)
         CmdSelectTeam(1);
         Debug.Log("clicked team 1");
-        foreach(Button button in buttons)
-        {
-            button.gameObject.SetActive(false);
-        }
-        
-        
+        redTeam.gameObject.SetActive(false);
+        blueTeam.gameObject.SetActive(false);
+
+
     }
     
     public void OnClickT2()
@@ -173,10 +201,11 @@ public class MyLobbyPlayer : NetworkLobbyPlayer
 
             this.transform.position = this.GetComponent<CharacterMovement>().startingpoint;
             
-        
-            
-        
-        
+
+
+
+
+
         // Clicked blueteam (team nr 1)
         CmdSelectTeam(2);
         Debug.Log("clicked team 2");
@@ -198,6 +227,20 @@ public class MyLobbyPlayer : NetworkLobbyPlayer
         // Set team of player on the server.
         teamid = teamIndex;
 
+    }
+    bool reset=false;
+    private void Update()
+    {
+        if (isLocalPlayer && puiholder.GetComponent<PlayerUI>().resettimer <= 9.5f)
+        {
+            reset = false;
+        }
+        else if (isLocalPlayer && puiholder.GetComponent<PlayerUI>().resettimer >= 9.5f && reset == false)
+        {
+            reset = true;
+            restartinggame();
+        }
+        
     }
 
 }

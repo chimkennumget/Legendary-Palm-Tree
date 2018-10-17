@@ -374,6 +374,7 @@
     <Compile Include="Assets\emotitron\Utilities\SmartVars\SmartVars.cs" />
     <Compile Include="Assets\emotitron\Utilities\StringTools.cs" />
     <Compile Include="Assets\emotitron\Utilities\UniqueNamesList.cs" />
+    <Compile Include="Assets\EndGame.cs" />
     <Compile Include="Assets\escape.cs" />
     <Compile Include="Assets\fallthenreset.cs" />
     <Compile Include="Assets\FirstScene\scripts\attachplayer.cs" />
@@ -404,6 +405,8 @@
     <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyServerEntry.cs" />
     <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyServerList.cs" />
     <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyTopPanel.cs" />
+    <Compile Include="Assets\Playerscoreboarditem.cs" />
+    <Compile Include="Assets\PlayerUI.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -449,8 +452,10 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\pushoff.cs" />
+    <Compile Include="Assets\Scoreboard.cs" />
     <Compile Include="Assets\sphereswitch.cs" />
     <Compile Include="Assets\team.cs" />
+    <Compile Include="Assets\Teamscoreboarditem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />

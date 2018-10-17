@@ -33,10 +33,11 @@ public class setuplocalplayer : NetworkBehaviour {
     void Start () {
         if (isLocalPlayer)
         {
-            
-            
+
+
             fpscamera = Camera.main;
             
+            GetComponentInChildren<PlayerUI>().enabled = true;
             al.enabled = true;
             GetComponent<Health>().enabled = true;
 
@@ -49,7 +50,8 @@ public class setuplocalplayer : NetworkBehaviour {
         else
         {
             fpscamera.enabled = false;
-
+            this.GetComponentInChildren<PlayerUI>().enabled = false;
+                
             GetComponent<Health>().enabled = false;
             GetComponent<CharacterMovement>().enabled = false;
         }

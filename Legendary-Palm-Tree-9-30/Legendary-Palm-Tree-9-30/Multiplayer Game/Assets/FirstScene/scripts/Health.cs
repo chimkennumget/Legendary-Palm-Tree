@@ -13,7 +13,7 @@ public class Health : NetworkBehaviour {
     [SyncVar(hook = "adjusthealthbar")]public int currentHealth = maxHealth;
     public RectTransform healthbar;
     
-    public void TakeDamage(int amount) 
+    public void TakeDamage(int amount, GameObject dealer) 
     {
         
         if (isServer)
@@ -27,6 +27,10 @@ public class Health : NetworkBehaviour {
             regentimerwait = 0;
             if (currentHealth <= 0)
             {
+                GetComponent<CharacterMovement>().deaths++;
+                Debug.Log(GetComponent<CharacterMovement>().deaths);
+                dealer.GetComponent<CharacterMovement>().kills++;
+                Debug.Log(dealer.GetComponent<CharacterMovement>().kills);
                 currentHealth = maxHealth;
                 Rpcrespawn();
             }

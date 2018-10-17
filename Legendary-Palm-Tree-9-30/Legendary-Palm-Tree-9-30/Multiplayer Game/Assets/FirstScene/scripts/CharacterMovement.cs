@@ -17,37 +17,17 @@ public class CharacterMovement : NetworkBehaviour
     public bool boxiscolliding;
     public GameObject player;
     public Vector3 startingpoint;
+    public Vector3 initialpoint;
     attachplayer ap;
     Rigidbody rb;
+    [SyncVar]
+    public string username = "Loading...";
    
-    //[SyncVar(hook ="serversetblueteam")]
-    //public bool blueteam=false;
-
-    //[SyncVar(hook = "serversetredteam")]
-   // public bool redteam=false;
     bool threw;
-    //void serversetredteam(bool rt)
-    //{
-    //    if (rt)
-    //    {
-    //        this.redteam = true;
-    //    }
-    //    else
-    //    {
-    //        this.redteam = false;
-    //    }
-    //}
-    //void serversetblueteam(bool bt)
-    //{
-    //    if (bt)
-    //    {
-    //        this.blueteam = true;
-    //    }
-    //    else
-    //    {
-    //        this.blueteam = false;
-    //    }
-    //}
+    [SyncVar]
+    public int kills;
+    [SyncVar]
+    public int deaths;
     
    
     [Command]
@@ -56,7 +36,7 @@ public class CharacterMovement : NetworkBehaviour
         //Rpcthrowbomb();
         GameObject clone = Instantiate(bomb, bombspawn.transform.position, transform.localRotation) as GameObject; //the clone variable holds our instantiate action
         clone.GetComponent<Rigidbody>().isKinematic = false;
-
+        clone.GetComponent<explodebomb>().thrower = this.gameObject;//used for updating kills
         clone.GetComponent<explodebomb>().throwerid = this.GetComponent<MyLobbyPlayer>().teamid;
         Physics.IgnoreCollision(clone.GetComponent<Collider>(), GetComponent<Collider>());
 
@@ -66,28 +46,29 @@ public class CharacterMovement : NetworkBehaviour
         Debug.Log("spawned it");
 
     }
-    [ClientRpc]
-    void Rpcthrowbomb()
-    {
+    //[ClientRpc]
+    //void Rpcthrowbomb()
+    //{
 
-        GameObject clone = Instantiate(bomb, bombspawn.transform.position, transform.localRotation) as GameObject; //the clone variable holds our instantiate action
-        clone.GetComponent<Rigidbody>().isKinematic = false;
+    //    GameObject clone = Instantiate(bomb, bombspawn.transform.position, transform.localRotation) as GameObject; //the clone variable holds our instantiate action
+    //    clone.GetComponent<Rigidbody>().isKinematic = false;
 
-        clone.GetComponent<explodebomb>().throwerid = this.GetComponent<MyLobbyPlayer>().teamid;
+    //    clone.GetComponent<explodebomb>().throwerid = this.GetComponent<MyLobbyPlayer>().teamid;
 
 
-        Rigidbody clonerb = clone.GetComponent<Rigidbody>();
-        clonerb.AddRelativeForce(Vector3.forward * 800);
-        NetworkServer.Spawn(clone);
-        Debug.Log("spawned it");
+    //    Rigidbody clonerb = clone.GetComponent<Rigidbody>();
+    //    clonerb.AddRelativeForce(Vector3.forward * 800);
+    //    NetworkServer.Spawn(clone);
+    //    Debug.Log("spawned it");
 
-    }
+    //}
     [Command]
     void Cmdthrowdelaybomb()
     {
 
         GameObject clone = Instantiate(bomb, bombspawn.transform.position, transform.localRotation) as GameObject; //the clone variable holds our instantiate action
         clone.GetComponent<Rigidbody>().isKinematic = false;
+        clone.GetComponent<explodebomb>().thrower = this.gameObject;//used for udating kills;
         clone.GetComponent<explodebomb>().throwerid = this.GetComponent<MyLobbyPlayer>().teamid;//consider getinstanceID for testing different teams
         Debug.Log(clone.GetComponent<explodebomb>().throwerid);
         clone.GetComponent<explodebomb>().delayexplode = true;
@@ -102,6 +83,7 @@ public class CharacterMovement : NetworkBehaviour
     {
         player = this.gameObject;
         startingpoint = gameObject.transform.position;
+        initialpoint = gameObject.transform.position;
         anim = this.GetComponent<Animator>();
         boxxy = GameObject.Find("Cube");
         rb = this.GetComponent<Rigidbody>();
@@ -154,26 +136,31 @@ public class CharacterMovement : NetworkBehaviour
 
     public float x;
      public float z;
-
-
-    void Update()
+    public bool movementdisabler = false;
+    public void InputsController()
     {
-
-
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (movementdisabler==true)
         {
-            Cmdthrowbomb();
+            print("its true");
+            
         }
-        //fun cheat to break game with :p
-        if (Input.GetKey(KeyCode.Alpha1) && Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.Alpha3) && Input.GetKey(KeyCode.Alpha7) && Input.GetKey(KeyCode.Alpha8)
-            && Input.GetKey(KeyCode.Alpha0))
-        {
-            Cmdthrowbomb();
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Cmdthrowdelaybomb();
-        }
+        else
+        { 
+        
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Cmdthrowbomb();
+            }
+            //fun cheat to break game with :p
+            if (Input.GetKey(KeyCode.Alpha1) && Input.GetKey(KeyCode.Alpha2) && Input.GetKey(KeyCode.Alpha3) && Input.GetKey(KeyCode.Alpha7) && Input.GetKey(KeyCode.Alpha8)
+                && Input.GetKey(KeyCode.Alpha0))
+            {
+                Cmdthrowbomb();
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Cmdthrowdelaybomb();
+            }
 
             if (gameObject.transform.position.y <= -20)
             {
@@ -195,13 +182,13 @@ public class CharacterMovement : NetworkBehaviour
             }
 
 
-        //if (anim.GetBool("jumping")==false)
-        //{
+            //if (anim.GetBool("jumping")==false)
+            //{
             transform.Translate(0, 0, z);
-        //}
-            
+            //}
+
             transform.Rotate(0, x, 0);
-            
+
             if (wasmoving)
             {
                 transform.Translate(0, 0, airspeed);
@@ -211,9 +198,9 @@ public class CharacterMovement : NetworkBehaviour
                 transform.Translate(xairspeed, yairspeed, zairspeed, objattachedto.transform);
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && anim.GetBool("jumping")==false)
+            if (Input.GetKeyDown(KeyCode.Space) && anim.GetBool("jumping") == false)
             {
-            Debug.Log("jump");
+                Debug.Log("jump");
                 charjump();
 
             }
@@ -239,6 +226,22 @@ public class CharacterMovement : NetworkBehaviour
                 anim.SetBool("running", false);
                 anim.SetBool("backstepping", false);
             }
+        }
+
+    }
+   
+    
+    void Update()
+    {
+        
+       
+        
+            InputsController();
+        
+            
+        
+            
+        
         
         
     }

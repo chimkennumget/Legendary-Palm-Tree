@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class explodebomb : NetworkBehaviour {
-    
-    
+
+    public GameObject thrower;
     GameObject explosion;
     ParticleSystem parts;
     CharacterMovement cm;
@@ -133,7 +133,7 @@ void explode()
         {
             Rigidbody rb = hit.GetComponent<Rigidbody>();
             Health health = hit.GetComponent<Health>();
-            
+            GameObject enemythrower = thrower;
 
             MyLobbyPlayer tm = hit.GetComponent<MyLobbyPlayer>();
             
@@ -162,7 +162,8 @@ void explode()
                         damage = (int)(power * 3 / (4 * 3.14 * dist * dist * dist));//calculation on unity answers for how add explosive force force is applied as distance increases https://answers.unity.com/questions/283146/how-to-calculate-force-from-explosion-on-a-rigidbo.html
                     }
                     Debug.Log(damage);
-                    health.TakeDamage(damage);
+                    health.TakeDamage(damage,enemythrower);
+                
                     rb.AddExplosionForce(power / 10, bombposition, radius, upforce * 0, ForceMode.Impulse);
                 
                
