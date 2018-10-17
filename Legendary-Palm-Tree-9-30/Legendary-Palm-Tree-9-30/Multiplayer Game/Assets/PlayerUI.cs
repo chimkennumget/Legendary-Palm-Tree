@@ -13,8 +13,8 @@ public class PlayerUI : MonoBehaviour {
     [SerializeField]
     Transform endgamemsgfield;
     public int scorelimit;
-    
-    
+
+    GameObject playerui;
     GameObject[] PlayersG = new GameObject[8];
     bool sbshown = false;
     // Use this for initialization
@@ -35,6 +35,10 @@ public class PlayerUI : MonoBehaviour {
 
 
     }
+    public TextMesh LCIscore;
+    public TextMesh LCAscore;
+    public int LCIbonus;
+    public int LCAbonus;
     int LCIkills = 0;
     int LCAkills = 0;
     void updatescore()
@@ -54,7 +58,15 @@ public class PlayerUI : MonoBehaviour {
                     LCAkills += player.GetComponent<CharacterMovement>().kills;
                 }
             }
+            
         }
+        LCIkills += LCIbonus;
+        LCAkills += LCAbonus;
+
+        LCIscore.text = "LCI: " + LCIkills;
+        
+        LCAscore.text = "LCA: " + LCAkills;
+
         if (LCAkills >= scorelimit && LCAkills>LCIkills || LCIkills >= scorelimit && LCIkills>LCAkills)
         {
             print("someone is winning");
@@ -62,21 +74,25 @@ public class PlayerUI : MonoBehaviour {
         }
     }
 
-    bool startresettimer;
+    public bool startresettimer;
     void victorycheck()
     {
-
+        
         endgameboard.SetActive(true);
         scoreboard.SetActive(false);
         GameObject itemGOI = Instantiate(endgame, endgamemsgfield);
         EndGame item = itemGOI.GetComponent<EndGame>();
         itemGO = itemGOI;
-        if (item != null)
+        if (itemGO != null)
         {
             print("something should be here");
             item.endgamemsg(LCIkills, LCAkills,scorelimit);
         }
-        startresettimer = true;
+        foreach(GameObject pui in GameObject.FindGameObjectsWithTag("pui"))
+        {
+            pui.GetComponent<PlayerUI>().startresettimer = true;
+        }
+        
 
 
     }
@@ -96,7 +112,7 @@ public class PlayerUI : MonoBehaviour {
             sbshown = false;
         }
         waittimer += Time.deltaTime;
-        if (waittimer > 1 && itemGO == null)
+        if (waittimer > 2 && itemGO == null)
         {
            
             findeveryone();
@@ -107,8 +123,13 @@ public class PlayerUI : MonoBehaviour {
         }
         if (startresettimer)
         {
+            
             waittimer = 0;
             resettimer += Time.deltaTime;
+           GetComponent<PlayerUI>().LCIbonus = 0;
+           GetComponent<PlayerUI>().LCAbonus = 0;
+           GetComponent<PlayerUI>().LCIkills = 0;
+           GetComponent<PlayerUI>().LCAkills = 0;
         }
         if (resettimer > 10)
         {
@@ -116,6 +137,8 @@ public class PlayerUI : MonoBehaviour {
             {
                 Destroy(child.gameObject);
             }
+            
+
             resettimer = 0;
             startresettimer = false;
             itemGO = null;//allow for victory timer to check things again
@@ -127,31 +150,20 @@ public class PlayerUI : MonoBehaviour {
                 {
                     player.transform.position = player.GetComponent<CharacterMovement>().initialpoint;
                     player.GetComponent<CharacterMovement>().kills = 0;
+                    scoreboard.GetComponent<Scoreboard>().LCIbonus = 0;
+                    scoreboard.GetComponent<Scoreboard>().LCAbonus = 0;
+                    
+                    Debug.Log("kills" + player.GetComponent<CharacterMovement>().kills);
                     player.GetComponent<CharacterMovement>().deaths = 0;
-                    //player.GetComponent<MyLobbyPlayer>().teamid = 0;
-                    //    player.GetComponent<MyLobbyPlayer>().blueTeam.gameObject.SetActive(false);
-                    //    player.GetComponent<MyLobbyPlayer>().blueTeam.gameObject.SetActive(false);
-                    
-                    
-                    //    player.GetComponent<MyLobbyPlayer>().blueTeam.gameObject.SetActive(true);
-                    //    player.GetComponent<MyLobbyPlayer>().blueTeam.onClick.RemoveAllListeners();
-                    //    player.GetComponent<MyLobbyPlayer>().redTeam.gameObject.SetActive(true);
-                    //    player.GetComponent<MyLobbyPlayer>().redTeam.onClick.RemoveAllListeners();
+                    Debug.Log("deaths" + player.GetComponent<CharacterMovement>().deaths);
+                   
 
-                    
-
-
-
-                    //// Add listeners
-                    ////redTeam.onClick.RemoveAllListeners();
-                    //player.GetComponent<MyLobbyPlayer>().redTeam.onClick.AddListener(player.GetComponent<MyLobbyPlayer>().OnClickT1);
-
-                    //// blueTeam.onClick.RemoveAllListeners();
-                    //player.GetComponent<MyLobbyPlayer>().blueTeam.onClick.AddListener(player.GetComponent<MyLobbyPlayer>().OnClickT2);
-                    
                 }
 
             }
+            
+            }
         }
 	}
-}
+
+

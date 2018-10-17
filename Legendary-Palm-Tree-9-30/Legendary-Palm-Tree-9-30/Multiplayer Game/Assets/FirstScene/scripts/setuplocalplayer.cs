@@ -15,6 +15,7 @@ public class setuplocalplayer : NetworkBehaviour {
         {
             pname = GUI.TextField(new Rect(25, Screen.height - 40, 100, 30), pname);
             
+            
             if(GUI.Button(new Rect(130,Screen.height - 40, 80, 30), "Change"))
             {
                 
@@ -38,6 +39,8 @@ public class setuplocalplayer : NetworkBehaviour {
             fpscamera = Camera.main;
             
             GetComponentInChildren<PlayerUI>().enabled = true;
+            GetComponentInChildren<Suicide>().enabled = true;
+            GetComponentInChildren<MyLobbyPlayer>().enabled = true;
             al.enabled = true;
             GetComponent<Health>().enabled = true;
 
@@ -50,8 +53,9 @@ public class setuplocalplayer : NetworkBehaviour {
         else
         {
             fpscamera.enabled = false;
-            this.GetComponentInChildren<PlayerUI>().enabled = false;
-                
+            GetComponentInChildren<MyLobbyPlayer>().enabled = true;
+            //this.GetComponentInChildren<PlayerUI>().enabled = false;
+            GetComponentInChildren<Suicide>().enabled = false;
             GetComponent<Health>().enabled = false;
             GetComponent<CharacterMovement>().enabled = false;
         }
@@ -61,6 +65,16 @@ public class setuplocalplayer : NetworkBehaviour {
 	void Update () {
         //if (isLocalPlayer)
             this.GetComponentInChildren<TextMesh>().text = pname;
-        	
-	}
+        if (this.GetComponent<MyLobbyPlayer>().teamid == 1)
+        {
+            this.GetComponentInChildren<TextMesh>().color = Color.red;
+        }
+        else if (this.GetComponent<MyLobbyPlayer>().teamid == 2) {
+            this.GetComponentInChildren<TextMesh>().color = Color.blue;
+                }
+
+
+
+
+    }
 }

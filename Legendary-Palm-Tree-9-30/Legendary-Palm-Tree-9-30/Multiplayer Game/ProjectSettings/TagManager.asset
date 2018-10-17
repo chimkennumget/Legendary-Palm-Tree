@@ -9,6 +9,8 @@ TagManager:
   - red
   - blue
   - bomb
+  - deathbarrier
+  - pui
   layers:
   - Default
   - TransparentFX

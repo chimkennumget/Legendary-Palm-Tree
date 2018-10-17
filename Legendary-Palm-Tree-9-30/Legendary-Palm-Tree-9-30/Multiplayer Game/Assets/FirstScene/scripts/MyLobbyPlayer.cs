@@ -51,7 +51,8 @@ public class MyLobbyPlayer : NetworkLobbyPlayer
     public GameObject t2sp7;
     public GameObject t2sp8;
     GameObject[] t2spawns = new GameObject[8];
-
+    public SkinnedMeshRenderer sailor;
+    public SkinnedMeshRenderer black;
     public Button redTeam;
     public Button blueTeam;
     //buttons
@@ -171,14 +172,15 @@ public class MyLobbyPlayer : NetworkLobbyPlayer
         this.GetComponent<CharacterMovement>().startingpoint = t1spawns[i].transform.position;
 
         this.transform.position = this.GetComponent<CharacterMovement>().startingpoint;
-        
+        this.transform.rotation = this.GetComponent<CharacterMovement>().startingrotation;
+
 
         // Clicked red team (team nr 0)
         CmdSelectTeam(1);
         Debug.Log("clicked team 1");
         redTeam.gameObject.SetActive(false);
         blueTeam.gameObject.SetActive(false);
-
+        //black.GetComponent<SkinnedMeshRenderer>().sharedMaterial.mainTexture = sailor.material.mainTexture;
 
     }
     
@@ -200,7 +202,8 @@ public class MyLobbyPlayer : NetworkLobbyPlayer
             this.GetComponent<CharacterMovement>().startingpoint = t2spawns[i].transform.position;
 
             this.transform.position = this.GetComponent<CharacterMovement>().startingpoint;
-            
+            this.transform.rotation = this.GetComponent<CharacterMovement>().startingrotation;
+
 
 
 
@@ -211,8 +214,8 @@ public class MyLobbyPlayer : NetworkLobbyPlayer
         Debug.Log("clicked team 2");
         redTeam.gameObject.SetActive(false);
         blueTeam.gameObject.SetActive(false);
-        
-        
+        //this.GetComponent<setuplocalplayer>().pname = GUI.TextField(new Rect(25, Screen.height - 40, 100, 30), this.GetComponent<setuplocalplayer>().pname); ;
+       
         
 
     }
@@ -226,6 +229,7 @@ public class MyLobbyPlayer : NetworkLobbyPlayer
         
         // Set team of player on the server.
         teamid = teamIndex;
+        Debug.Log(teamid);
 
     }
     bool reset=false;

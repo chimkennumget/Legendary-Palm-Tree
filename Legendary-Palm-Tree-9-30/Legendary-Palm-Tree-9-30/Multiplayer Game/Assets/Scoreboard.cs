@@ -41,7 +41,8 @@ public class Scoreboard : MonoBehaviour {
 
         
     }
-
+    public int LCIbonus;
+    public int LCAbonus;
     void updateteamscores(GameObject[] players)
     {
         int LCIkills = 0;
@@ -60,7 +61,8 @@ public class Scoreboard : MonoBehaviour {
                 }
             }
         }
-
+        LCIkills += LCIbonus;
+        LCAkills += LCAbonus;
         
             GameObject itemGO = Instantiate(teamscoreboardprefab, playerscoreboardlist);
             Teamscoreboarditem item = itemGO.GetComponent<Teamscoreboarditem>();

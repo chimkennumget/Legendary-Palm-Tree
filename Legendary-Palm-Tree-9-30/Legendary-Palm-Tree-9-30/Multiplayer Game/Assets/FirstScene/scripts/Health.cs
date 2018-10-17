@@ -118,6 +118,7 @@ public class Health : NetworkBehaviour {
         if (isLocalPlayer)
         {
             this.GetComponent<Rigidbody>().angularVelocity = this.GetComponent<Rigidbody>().angularVelocity * .01f;
+            this.transform.rotation = this.GetComponent<CharacterMovement>().startingrotation;
             this.transform.position = this.GetComponent<CharacterMovement>().startingpoint;
         }
     }

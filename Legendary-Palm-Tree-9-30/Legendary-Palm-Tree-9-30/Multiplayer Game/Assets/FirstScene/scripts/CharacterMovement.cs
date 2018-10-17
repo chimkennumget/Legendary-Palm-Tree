@@ -17,6 +17,7 @@ public class CharacterMovement : NetworkBehaviour
     public bool boxiscolliding;
     public GameObject player;
     public Vector3 startingpoint;
+    public Quaternion startingrotation;
     public Vector3 initialpoint;
     attachplayer ap;
     Rigidbody rb;
@@ -81,7 +82,9 @@ public class CharacterMovement : NetworkBehaviour
     public override void OnStartLocalPlayer()
     
     {
+        
         player = this.gameObject;
+        startingrotation = this.transform.rotation;
         startingpoint = gameObject.transform.position;
         initialpoint = gameObject.transform.position;
         anim = this.GetComponent<Animator>();

@@ -90,21 +90,21 @@ public class relativegravitycontrol : MonoBehaviour
             if (Physics.Raycast(transform.position, -transform.up, out hit, 1))
             {
                 transform.localRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-                transform.localRotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, hit.normal), hit.normal), Time.deltaTime * 500.0f);
+                transform.localRotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, hit.normal), hit.normal), Time.deltaTime * 5000.0f);
             }
     }
     //private void OnCollisionStay(Collision collision)
     //{
-        
-          
-    //        RaycastHit hit;
-    //        if (Physics.SphereCast(transform.position, 0.1f, -transform.up, out hit, .02f))
+
+
+    //    RaycastHit hit;
+    //    if (Physics.SphereCast(transform.position, 0.1f, -transform.up, out hit, .02f))
     //        if (Physics.Raycast(transform.position, -transform.up, out hit, 1))
     //        {
     //            transform.localRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-    //            transform.localRotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, hit.normal), hit.normal), Time.deltaTime * 500.0f);
+    //            transform.localRotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, hit.normal), hit.normal), Time.deltaTime * 5000.0f);
     //        }
-        
+
     //}
     //checks for key presses to run to related gravity change functions if player is not in the air
     private void LateUpdate()
