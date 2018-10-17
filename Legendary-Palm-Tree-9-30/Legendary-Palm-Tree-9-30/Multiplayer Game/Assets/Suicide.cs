@@ -28,7 +28,7 @@ public class Suicide : MonoBehaviour {
                         Debug.Log("a players total scores bonus scores should be getting updated");
                          GetComponentInChildren<PlayerUI>().LCAbonus++;
 
-                        Pui.GetComponentInChildren<Scoreboard>().LCAbonus++;
+                        scoreboard.GetComponent<Scoreboard>().LCAbonus++;
                     }
                 }
             }
